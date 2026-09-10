@@ -1,0 +1,51 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "NASM",
+				"implicit" : {},
+				"path" : "/usr/bin/nasm",
+				"version" : ""
+			},
+			"language" : "ASM_NASM",
+			"sourceFileExtensions" : 
+			[
+				"nasm",
+				"asm"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/usr/lib/gcc/x86_64-linux-gnu/16/include",
+						"/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "/usr/bin/x86_64-linux-gnu-gcc",
+				"version" : "16.1.1"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

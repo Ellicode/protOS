@@ -1,0 +1,5 @@
+/home/ellicode/Documents/Code/protOS/build/CMakeFiles/edit_cache.dir
+/home/ellicode/Documents/Code/protOS/build/CMakeFiles/rebuild_cache.dir
+/home/ellicode/Documents/Code/protOS/build/kernel/CMakeFiles/kernel.dir
+/home/ellicode/Documents/Code/protOS/build/kernel/CMakeFiles/edit_cache.dir
+/home/ellicode/Documents/Code/protOS/build/kernel/CMakeFiles/rebuild_cache.dir

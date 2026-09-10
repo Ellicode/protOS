@@ -1,0 +1,127 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.3.2/CMakeSystem.cmake"
+		},
+		{
+			"path" : "toolchain/x86_64.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.3.2/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/CMakeFiles/4.3.2/CMakeASM_NASMCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Platform/Generic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeCLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeCommonLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeASM_NASMInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeASMInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeASM_NASMLinkerInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeASMLinkerInformation.cmake"
+		},
+		{
+			"path" : "kernel/CMakeLists.txt"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/home/ellicode/Documents/Code/protOS/build",
+		"source" : "/home/ellicode/Documents/Code/protOS"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 1
+	}
+}

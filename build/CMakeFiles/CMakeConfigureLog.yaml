@@ -1,0 +1,2414 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+      - "/bin/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/uname"
+      - "/home/ellicode/.local/bin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:207 (message)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      The target system is: Generic -  - x86_64
+      The host system is: Linux - 7.1.6-400.asahi.fc44.aarch64+16k - aarch64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/gmake"
+      - "/home/ellicode/.local/bin/gmake"
+      - "/usr/local/bin/gmake"
+    found: "/usr/bin/gmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-gcc"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc"
+    found: "/usr/bin/x86_64-linux-gnu-gcc"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/x86_64-linux-gnu-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /usr/bin/x86_64-linux-gnu-ld: cannot find crt1.o: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find crti.o: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find -latomic_asneeded: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find -lc: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find crtn.o: No such file or directory
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/x86_64-linux-gnu-gcc 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /home/ellicode/Documents/Code/protOS/build/CMakeFiles/4.3.2/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:58 (__resolve_tool_path)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/x86_64-linux-gnu-ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-strip"
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/x86_64-linux-gnu-strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-nm"
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/x86_64-linux-gnu-nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/x86_64-linux-gnu-objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/x86_64-linux-gnu-objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/x86_64-linux-gnu-readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-dlltool"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-dlltool"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-dlltool"
+      - "/usr/local/bin/x86_64-linux-gnu-dlltool"
+      - "/usr/local/sbin/x86_64-linux-gnu-dlltool"
+      - "/usr/sbin/x86_64-linux-gnu-dlltool"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-dlltool"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-dlltool"
+      - "/usr/bin/dlltool"
+      - "/home/ellicode/.cargo/bin/dlltool"
+      - "/home/ellicode/.local/bin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/var/lib/snapd/snap/bin/dlltool"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    found: "/usr/bin/x86_64-linux-gnu-addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-tapi"
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-tapi"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-tapi"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-tapi"
+      - "/usr/local/bin/x86_64-linux-gnu-tapi"
+      - "/usr/local/sbin/x86_64-linux-gnu-tapi"
+      - "/usr/sbin/x86_64-linux-gnu-tapi"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-tapi"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-tapi"
+      - "/usr/bin/tapi"
+      - "/home/ellicode/.cargo/bin/tapi"
+      - "/home/ellicode/.local/bin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/sbin/tapi"
+      - "/var/lib/snapd/snap/bin/tapi"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-gcc-ar-16.1"
+      - "x86_64-linux-gnu-gcc-ar-16"
+      - "x86_64-linux-gnu-gcc-ar16"
+      - "x86_64-linux-gnu-gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ar-16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ar16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ar16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-gcc-ar16"
+    found: "/usr/bin/x86_64-linux-gnu-gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "x86_64-linux-gnu-gcc-ranlib-16"
+      - "x86_64-linux-gnu-gcc-ranlib16"
+      - "x86_64-linux-gnu-gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/x86_64-linux-gnu-gcc-ranlib16"
+    found: "/usr/bin/x86_64-linux-gnu-gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:64 (_cmake_find_compiler_path)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_ASM_NASM_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nasm"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/nasm"
+      - "/home/ellicode/.local/bin/nasm"
+      - "/usr/local/bin/nasm"
+    found: "/usr/bin/nasm"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+        - "/home/ellicode/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-arm64/bundled/scripts/noConfigScripts"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is Clang using "--version" did not match "(clang version)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is ARMClang using "--version" did not match "armclang":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is OrangeC using "--version" did not match "occ \\(OrangeC\\) Version":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is HP using "-V" did not match "HP C":
+      nasm: error: unrecognised option `-V'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is Intel using "--version" did not match "(ICC)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is IntelLLVM using "--version" did not match "(Intel[^
+      ]+oneAPI)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is SunPro using "-V" did not match "Sun C":
+      nasm: error: unrecognised option `-V'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is XL using "-qversion" did not match "XL C":
+      nasm: error: unrecognised option `-q'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is MSVC using "-?" did not match "Microsoft":
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+        Options:
+          -v (or --v)    print the NASM version number and exit
+          -@ file        response file; one command line option per line
+          -h             list command line options and exit (also --help)
+          -h -opt        show additional help for option "-opt"
+          -h all         show all available command line help
+          -h topics      show list of help topics (also -h list)
+          -o outfile     write output to outfile
+          --keep-all     output files will not be removed even if an error happens
+          -Xformat       specify error reporting format (see -h -X)
+          -s             redirect messages to stdout
+          -Zfile         redirect messages to file
+          --info[=lvl]   display optional informational messages
+          --debug[=lvl]  display NASM internal debugging messages
+          -M...          generate Makefile dependencies (see -h -M)
+          -f format      select output file format (see -h -f)
+          -g             generate debugging information
+          -F format      select a debugging format (see -h -F)
+          -gformat       same as -g -F format
+          -l listfile    write listing to a list file
+          -Lflags...     add information to the list file (see -h -L)
+          -Oflags...     select optimization (see -h -O)
+          -t             assemble in limited SciTech TASM compatible mode
+          -E (or -e)     preprocess only (writes output to stdout by default)
+          -a             don't preprocess (assemble only)
+          -Ipath         add a pathname to the include file path
+          -Pfile         pre-include a file (also --include)
+          -Dmacro[=str]  pre-define a macro
+          -Umacro        undefine a macro
+          -w+x           enable warning x  (see -h -w)(also -Wx)
+          -w-x           disable warning x (also -Wno-x)
+          -w[+-]error    promote all warnings to errors (also -Werror)
+          -w[+-]error=x  promote warning x to errors (also -Werror=x)
+          --pragma str   pre-executes a specific %pragma
+          --before str   add line (usually a preprocessor statement) before the input
+          --bits nn      set bits to nn (equivalent to --before "BITS nn")
+          --no-line      ignore %line directives in input
+          --gprefix str  prepend the given string to the names of all extern,
+                         common and global symbols (also --prefix)
+          --gpostfix str append the given string to the names of all extern,
+                         common and global symbols (also --postfix)
+          --lprefix str  prepend the given string to local symbols
+          --lpostfix str append the given string to local symbols
+          --reproducible attempt to produce run-to-run identical output
+          --limit-* val  set execution limit (see -h --limit)
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is TI using "-h" did not match "Texas Instruments":
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+        Options:
+          -v (or --v)    print the NASM version number and exit
+          -@ file        response file; one command line option per line
+          -h             list command line options and exit (also --help)
+          -h -opt        show additional help for option "-opt"
+          -h all         show all available command line help
+          -h topics      show list of help topics (also -h list)
+          -o outfile     write output to outfile
+          --keep-all     output files will not be removed even if an error happens
+          -Xformat       specify error reporting format (see -h -X)
+          -s             redirect messages to stdout
+          -Zfile         redirect messages to file
+          --info[=lvl]   display optional informational messages
+          --debug[=lvl]  display NASM internal debugging messages
+          -M...          generate Makefile dependencies (see -h -M)
+          -f format      select output file format (see -h -f)
+          -g             generate debugging information
+          -F format      select a debugging format (see -h -F)
+          -gformat       same as -g -F format
+          -l listfile    write listing to a list file
+          -Lflags...     add information to the list file (see -h -L)
+          -Oflags...     select optimization (see -h -O)
+          -t             assemble in limited SciTech TASM compatible mode
+          -E (or -e)     preprocess only (writes output to stdout by default)
+          -a             don't preprocess (assemble only)
+          -Ipath         add a pathname to the include file path
+          -Pfile         pre-include a file (also --include)
+          -Dmacro[=str]  pre-define a macro
+          -Umacro        undefine a macro
+          -w+x           enable warning x  (see -h -w)(also -Wx)
+          -w-x           disable warning x (also -Wno-x)
+          -w[+-]error    promote all warnings to errors (also -Werror)
+          -w[+-]error=x  promote warning x to errors (also -Werror=x)
+          --pragma str   pre-executes a specific %pragma
+          --before str   add line (usually a preprocessor statement) before the input
+          --bits nn      set bits to nn (equivalent to --before "BITS nn")
+          --no-line      ignore %line directives in input
+          --gprefix str  prepend the given string to the names of all extern,
+                         common and global symbols (also --prefix)
+          --gpostfix str append the given string to the names of all extern,
+                         common and global symbols (also --postfix)
+          --lprefix str  prepend the given string to local symbols
+          --lpostfix str append the given string to local symbols
+          --reproducible attempt to produce run-to-run identical output
+          --limit-* val  set execution limit (see -h --limit)
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is TIClang using "--version" did not match "(TI (.*) Clang Compiler)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is IAR using "" did not match "IAR Assembler":
+      nasm: fatal: no input file specified
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+         For additional help:
+             /usr/bin/nasm -h [run|topics|all|-option]
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is Diab using "-V" did not match "Wind River Systems":
+      nasm: error: unrecognised option `-V'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)|(Arm Compiler)":
+      nasm: fatal: no input file specified
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+         For additional help:
+             /usr/bin/nasm -h [run|topics|all|-option]
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1296 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is NASM using "-v" matched "(NASM version)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w"
+      binary: "/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w'
+        
+        Run Build Command(s): /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c4dfd/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c4dfd.dir/build.make CMakeFiles/cmTC_c4dfd.dir/build
+        gmake[1]: Entering directory '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w'
+        Building C object CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj
+        /usr/bin/x86_64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj -c /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/x86_64-linux-gnu-gcc
+        Target: x86_64-linux-gnu
+        Configured with: ../gcc-16.1.1-20260501/configure --bindir=/usr/bin --build=aarch64-redhat-linux-gnu --datadir=/usr/share --disable-decimal-float --disable-dependency-tracking --disable-gold --disable-libgcj --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libunwind-exceptions --disable-shared --disable-silent-rules --disable-sjlj-exceptions --disable-threads --with-ld=/usr/bin/x86_64-linux-gnu-ld --enable-__cxa_atexit --enable-checking=release --enable-gnu-unique-object --enable-initfini-array --enable-languages=c,c++ --enable-linker-build-id --enable-lto --enable-nls --enable-obsolete --enable-plugin --enable-targets=all --exec-prefix=/usr --host=aarch64-redhat-linux-gnu --includedir=/usr/include --infodir=/usr/share/info --libexecdir=/usr/libexec --localstatedir=/var --mandir=/usr/share/man --prefix=/usr --program-prefix=x86_64-linux-gnu- --sbindir=/usr/bin --sharedstatedir=/var/lib --sysconfdir=/etc --target=x86_64-linux-gnu --with-bugurl=http://bugzilla.redhat.com/bugzilla/ --with-gcc-major-version-only --with-isl --with-newlib --with-plugin-ld=/usr/bin/x86_64-linux-gnu-ld --with-sysroot=/usr/x86_64-linux-gnu/sys-root --with-system-libunwind --with-system-zlib --without-headers --with-arch_32=i686 --with-tune=generic --enable-cet --enable-gnu-indirect-function --with-linker-hash-style=gnu
+        Thread model: single
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c4dfd.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/16/cc1 -quiet -v /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c4dfd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccY1OT4U.s
+        GNU C23 (GCC) version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (x86_64-linux-gnu)
+        	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/local/include"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/16/include
+         /usr/lib/gcc/x86_64-linux-gnu/16/include-fixed
+        End of search list.
+        Compiler executable checksum: 220f5235ee523191ea888f7f6700a90f
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c4dfd.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj /tmp/ccY1OT4U.s
+        GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version version 2.46-1.fc44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/16/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.'
+        Linking C static library libcmTC_c4dfd.a
+        /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -P CMakeFiles/cmTC_c4dfd.dir/cmake_clean_target.cmake
+        /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4dfd.dir/link.txt --verbose=1
+        x86_64-linux-gnu-ar qc libcmTC_c4dfd.a CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj
+        x86_64-linux-gnu-ranlib libcmTC_c4dfd.a
+        gmake[1]: Leaving directory '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/16/include]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/16/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/16/include]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed] ==> [/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/16/include;/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c4dfd/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_c4dfd.dir/build.make CMakeFiles/cmTC_c4dfd.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w']
+        ignore line: [Building C object CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [/usr/bin/x86_64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj -c /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-linux-gnu-gcc]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../gcc-16.1.1-20260501/configure --bindir=/usr/bin --build=aarch64-redhat-linux-gnu --datadir=/usr/share --disable-decimal-float --disable-dependency-tracking --disable-gold --disable-libgcj --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libunwind-exceptions --disable-shared --disable-silent-rules --disable-sjlj-exceptions --disable-threads --with-ld=/usr/bin/x86_64-linux-gnu-ld --enable-__cxa_atexit --enable-checking=release --enable-gnu-unique-object --enable-initfini-array --enable-languages=c,c++ --enable-linker-build-id --enable-lto --enable-nls --enable-obsolete --enable-plugin --enable-targets=all --exec-prefix=/usr --host=aarch64-redhat-linux-gnu --includedir=/usr/include --infodir=/usr/share/info --libexecdir=/usr/libexec --localstatedir=/var --mandir=/usr/share/man --prefix=/usr --program-prefix=x86_64-linux-gnu- --sbindir=/usr/bin --sharedstatedir=/var/lib --sysconfdir=/etc --target=x86_64-linux-gnu --with-bugurl=http://bugzilla.redhat.com/bugzilla/ --with-gcc-major-version-only --with-isl --with-newlib --with-plugin-ld=/usr/bin/x86_64-linux-gnu-ld --with-sysroot=/usr/x86_64-linux-gnu/sys-root --with-system-libunwind --with-system-zlib --without-headers --with-arch_32=i686 --with-tune=generic --enable-cet --enable-gnu-indirect-function --with-linker-hash-style=gnu]
+        ignore line: [Thread model: single]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c4dfd.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/16/cc1 -quiet -v /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c4dfd.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccY1OT4U.s]
+        ignore line: [GNU C23 (GCC) version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/16/include]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 220f5235ee523191ea888f7f6700a90f]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c4dfd.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj /tmp/ccY1OT4U.s]
+        ignore line: [GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version version 2.46-1.fc44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/16/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C static library libcmTC_c4dfd.a]
+        ignore line: [/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -P CMakeFiles/cmTC_c4dfd.dir/cmake_clean_target.cmake]
+        ignore line: [/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4dfd.dir/link.txt --verbose=1]
+        ignore line: [x86_64-linux-gnu-ar qc libcmTC_c4dfd.a CMakeFiles/cmTC_c4dfd.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [x86_64-linux-gnu-ranlib libcmTC_c4dfd.a]
+        ignore line: [gmake[1]: Leaving directory '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-2bjN8w']
+        ignore line: []
+        ignore line: []
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/bin/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/uname"
+      - "/home/ellicode/.local/bin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:207 (message)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      The target system is: Generic -  - x86_64
+      The host system is: Linux - 7.1.6-400.asahi.fc44.aarch64+16k - aarch64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Program used to build from build.ninja files."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ninja-build"
+      - "ninja"
+      - "samu"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/ninja-build"
+      - "/home/ellicode/.cargo/bin/ninja"
+      - "/home/ellicode/.cargo/bin/samu"
+      - "/home/ellicode/.local/bin/ninja-build"
+      - "/home/ellicode/.local/bin/ninja"
+      - "/home/ellicode/.local/bin/samu"
+      - "/usr/local/bin/ninja-build"
+      - "/usr/local/bin/ninja"
+      - "/usr/local/bin/samu"
+    found: "/usr/bin/ninja-build"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-gcc"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc"
+    found: "/usr/bin/x86_64-linux-gnu-gcc"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /usr/bin/x86_64-linux-gnu-gcc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      1
+      /usr/bin/x86_64-linux-gnu-ld: cannot find crt1.o: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find crti.o: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find -latomic_asneeded: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find -lc: No such file or directory
+      /usr/bin/x86_64-linux-gnu-ld: cannot find crtn.o: No such file or directory
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/x86_64-linux-gnu-gcc 
+      Build flags: 
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /home/ellicode/Documents/Code/protOS/build/CMakeFiles/4.3.2/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:58 (__resolve_tool_path)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/bin/x86_64-linux-gnu-ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-strip"
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/bin/x86_64-linux-gnu-strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-nm"
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/bin/x86_64-linux-gnu-nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/bin/x86_64-linux-gnu-objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/bin/x86_64-linux-gnu-objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/bin/x86_64-linux-gnu-readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-dlltool"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-dlltool"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-dlltool"
+      - "/usr/local/bin/x86_64-linux-gnu-dlltool"
+      - "/usr/local/sbin/x86_64-linux-gnu-dlltool"
+      - "/usr/sbin/x86_64-linux-gnu-dlltool"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-dlltool"
+      - "/usr/bin/dlltool"
+      - "/home/ellicode/.cargo/bin/dlltool"
+      - "/home/ellicode/.local/bin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/var/lib/snapd/snap/bin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    found: "/usr/bin/x86_64-linux-gnu-addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-tapi"
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-tapi"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-tapi"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-tapi"
+      - "/usr/local/bin/x86_64-linux-gnu-tapi"
+      - "/usr/local/sbin/x86_64-linux-gnu-tapi"
+      - "/usr/sbin/x86_64-linux-gnu-tapi"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-tapi"
+      - "/usr/bin/tapi"
+      - "/home/ellicode/.cargo/bin/tapi"
+      - "/home/ellicode/.local/bin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/sbin/tapi"
+      - "/var/lib/snapd/snap/bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-gcc-ar-16.1"
+      - "x86_64-linux-gnu-gcc-ar-16"
+      - "x86_64-linux-gnu-gcc-ar16"
+      - "x86_64-linux-gnu-gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ar-16.1"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ar-16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ar-16"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ar16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ar16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ar16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ar16"
+    found: "/usr/bin/x86_64-linux-gnu-gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "x86_64-linux-gnu-gcc-ranlib-16"
+      - "x86_64-linux-gnu-gcc-ranlib16"
+      - "x86_64-linux-gnu-gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    searched_directories:
+      - "/usr/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ranlib-16.1"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ranlib-16"
+      - "/usr/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/home/ellicode/.cargo/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/home/ellicode/.local/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/usr/local/bin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/usr/local/sbin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/usr/sbin/x86_64-linux-gnu-gcc-ranlib16"
+      - "/var/lib/snapd/snap/bin/x86_64-linux-gnu-gcc-ranlib16"
+    found: "/usr/bin/x86_64-linux-gnu-gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:64 (_cmake_find_compiler_path)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    mode: "program"
+    variable: "CMAKE_ASM_NASM_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nasm"
+    candidate_directories:
+      - "/home/ellicode/.cargo/bin/"
+      - "/home/ellicode/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/sbin/"
+      - "/var/lib/snapd/snap/bin/"
+    searched_directories:
+      - "/home/ellicode/.cargo/bin/nasm"
+      - "/home/ellicode/.local/bin/nasm"
+      - "/usr/local/bin/nasm"
+    found: "/usr/bin/nasm"
+    search_context:
+      ENV{PATH}:
+        - "/home/ellicode/.cargo/bin"
+        - "/home/ellicode/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/local/sbin"
+        - "/usr/sbin"
+        - "/var/lib/snapd/snap/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is AppleClang using "--version" did not match "(Apple (clang|LLVM) version)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is Clang using "--version" did not match "(clang version)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is ARMClang using "--version" did not match "armclang":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is OrangeC using "--version" did not match "occ \\(OrangeC\\) Version":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is HP using "-V" did not match "HP C":
+      nasm: error: unrecognised option `-V'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is Intel using "--version" did not match "(ICC)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is IntelLLVM using "--version" did not match "(Intel[^
+      ]+oneAPI)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is SunPro using "-V" did not match "Sun C":
+      nasm: error: unrecognised option `-V'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is XL using "-qversion" did not match "XL C":
+      nasm: error: unrecognised option `-q'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is MSVC using "-?" did not match "Microsoft":
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+        Options:
+          -v (or --v)    print the NASM version number and exit
+          -@ file        response file; one command line option per line
+          -h             list command line options and exit (also --help)
+          -h -opt        show additional help for option "-opt"
+          -h all         show all available command line help
+          -h topics      show list of help topics (also -h list)
+          -o outfile     write output to outfile
+          --keep-all     output files will not be removed even if an error happens
+          -Xformat       specify error reporting format (see -h -X)
+          -s             redirect messages to stdout
+          -Zfile         redirect messages to file
+          --info[=lvl]   display optional informational messages
+          --debug[=lvl]  display NASM internal debugging messages
+          -M...          generate Makefile dependencies (see -h -M)
+          -f format      select output file format (see -h -f)
+          -g             generate debugging information
+          -F format      select a debugging format (see -h -F)
+          -gformat       same as -g -F format
+          -l listfile    write listing to a list file
+          -Lflags...     add information to the list file (see -h -L)
+          -Oflags...     select optimization (see -h -O)
+          -t             assemble in limited SciTech TASM compatible mode
+          -E (or -e)     preprocess only (writes output to stdout by default)
+          -a             don't preprocess (assemble only)
+          -Ipath         add a pathname to the include file path
+          -Pfile         pre-include a file (also --include)
+          -Dmacro[=str]  pre-define a macro
+          -Umacro        undefine a macro
+          -w+x           enable warning x  (see -h -w)(also -Wx)
+          -w-x           disable warning x (also -Wno-x)
+          -w[+-]error    promote all warnings to errors (also -Werror)
+          -w[+-]error=x  promote warning x to errors (also -Werror=x)
+          --pragma str   pre-executes a specific %pragma
+          --before str   add line (usually a preprocessor statement) before the input
+          --bits nn      set bits to nn (equivalent to --before "BITS nn")
+          --no-line      ignore %line directives in input
+          --gprefix str  prepend the given string to the names of all extern,
+                         common and global symbols (also --prefix)
+          --gpostfix str append the given string to the names of all extern,
+                         common and global symbols (also --postfix)
+          --lprefix str  prepend the given string to local symbols
+          --lpostfix str append the given string to local symbols
+          --reproducible attempt to produce run-to-run identical output
+          --limit-* val  set execution limit (see -h --limit)
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is TI using "-h" did not match "Texas Instruments":
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+        Options:
+          -v (or --v)    print the NASM version number and exit
+          -@ file        response file; one command line option per line
+          -h             list command line options and exit (also --help)
+          -h -opt        show additional help for option "-opt"
+          -h all         show all available command line help
+          -h topics      show list of help topics (also -h list)
+          -o outfile     write output to outfile
+          --keep-all     output files will not be removed even if an error happens
+          -Xformat       specify error reporting format (see -h -X)
+          -s             redirect messages to stdout
+          -Zfile         redirect messages to file
+          --info[=lvl]   display optional informational messages
+          --debug[=lvl]  display NASM internal debugging messages
+          -M...          generate Makefile dependencies (see -h -M)
+          -f format      select output file format (see -h -f)
+          -g             generate debugging information
+          -F format      select a debugging format (see -h -F)
+          -gformat       same as -g -F format
+          -l listfile    write listing to a list file
+          -Lflags...     add information to the list file (see -h -L)
+          -Oflags...     select optimization (see -h -O)
+          -t             assemble in limited SciTech TASM compatible mode
+          -E (or -e)     preprocess only (writes output to stdout by default)
+          -a             don't preprocess (assemble only)
+          -Ipath         add a pathname to the include file path
+          -Pfile         pre-include a file (also --include)
+          -Dmacro[=str]  pre-define a macro
+          -Umacro        undefine a macro
+          -w+x           enable warning x  (see -h -w)(also -Wx)
+          -w-x           disable warning x (also -Wno-x)
+          -w[+-]error    promote all warnings to errors (also -Werror)
+          -w[+-]error=x  promote warning x to errors (also -Werror=x)
+          --pragma str   pre-executes a specific %pragma
+          --before str   add line (usually a preprocessor statement) before the input
+          --bits nn      set bits to nn (equivalent to --before "BITS nn")
+          --no-line      ignore %line directives in input
+          --gprefix str  prepend the given string to the names of all extern,
+                         common and global symbols (also --prefix)
+          --gpostfix str append the given string to the names of all extern,
+                         common and global symbols (also --postfix)
+          --lprefix str  prepend the given string to local symbols
+          --lpostfix str append the given string to local symbols
+          --reproducible attempt to produce run-to-run identical output
+          --limit-* val  set execution limit (see -h --limit)
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is TIClang using "--version" did not match "(TI (.*) Clang Compiler)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is IAR using "" did not match "IAR Assembler":
+      nasm: fatal: no input file specified
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+         For additional help:
+             /usr/bin/nasm -h [run|topics|all|-option]
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is Diab using "-V" did not match "Wind River Systems":
+      nasm: error: unrecognised option `-V'
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1309 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)|(Arm Compiler)":
+      nasm: fatal: no input file specified
+      Usage: /usr/bin/nasm [-@ response_file] [options...] [--] filename
+         For additional help:
+             /usr/bin/nasm -h [run|topics|all|-option]
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:1296 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineASM_NASMCompiler.cmake:22 (include)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Checking whether the ASM_NASM compiler is NASM using "-v" matched "(NASM version)":
+      NASM version 3.02 compiled on Jul 14 2026
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-sgKKof"
+      binary: "/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-sgKKof"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-sgKKof'
+        
+        Run Build Command(s): /usr/bin/ninja-build -v cmTC_7f9e7
+        [1/2] /usr/bin/x86_64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj -c /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/x86_64-linux-gnu-gcc
+        Target: x86_64-linux-gnu
+        Configured with: ../gcc-16.1.1-20260501/configure --bindir=/usr/bin --build=aarch64-redhat-linux-gnu --datadir=/usr/share --disable-decimal-float --disable-dependency-tracking --disable-gold --disable-libgcj --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libunwind-exceptions --disable-shared --disable-silent-rules --disable-sjlj-exceptions --disable-threads --with-ld=/usr/bin/x86_64-linux-gnu-ld --enable-__cxa_atexit --enable-checking=release --enable-gnu-unique-object --enable-initfini-array --enable-languages=c,c++ --enable-linker-build-id --enable-lto --enable-nls --enable-obsolete --enable-plugin --enable-targets=all --exec-prefix=/usr --host=aarch64-redhat-linux-gnu --includedir=/usr/include --infodir=/usr/share/info --libexecdir=/usr/libexec --localstatedir=/var --mandir=/usr/share/man --prefix=/usr --program-prefix=x86_64-linux-gnu- --sbindir=/usr/bin --sharedstatedir=/var/lib --sysconfdir=/etc --target=x86_64-linux-gnu --with-bugurl=http://bugzilla.redhat.com/bugzilla/ --with-gcc-major-version-only --with-isl --with-newlib --with-plugin-ld=/usr/bin/x86_64-linux-gnu-ld --with-sysroot=/usr/x86_64-linux-gnu/sys-root --with-system-libunwind --with-system-zlib --without-headers --with-arch_32=i686 --with-tune=generic --enable-cet --enable-gnu-indirect-function --with-linker-hash-style=gnu
+        Thread model: single
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7f9e7.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/16/cc1 -quiet -v /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7f9e7.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc9vEtIY.s
+        GNU C23 (GCC) version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (x86_64-linux-gnu)
+        	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1), GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/local/include"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/16/include
+         /usr/lib/gcc/x86_64-linux-gnu/16/include-fixed
+        End of search list.
+        Compiler executable checksum: 220f5235ee523191ea888f7f6700a90f
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7f9e7.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj /tmp/cc9vEtIY.s
+        GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version version 2.46-1.fc44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/16/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -E rm -f libcmTC_7f9e7.a && x86_64-linux-gnu-ar qc libcmTC_7f9e7.a  CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj && x86_64-linux-gnu-ranlib libcmTC_7f9e7.a && :
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/16/include]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/16/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/16/include]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed] ==> [/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/16/include;/usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/ellicode/Documents/Code/protOS/build/CMakeFiles/CMakeScratch/TryCompile-sgKKof']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/ninja-build -v cmTC_7f9e7]
+        ignore line: [[1/2] /usr/bin/x86_64-linux-gnu-gcc   -v -o CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj -c /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/x86_64-linux-gnu-gcc]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../gcc-16.1.1-20260501/configure --bindir=/usr/bin --build=aarch64-redhat-linux-gnu --datadir=/usr/share --disable-decimal-float --disable-dependency-tracking --disable-gold --disable-libgcj --disable-libgomp --disable-libmpx --disable-libquadmath --disable-libssp --disable-libunwind-exceptions --disable-shared --disable-silent-rules --disable-sjlj-exceptions --disable-threads --with-ld=/usr/bin/x86_64-linux-gnu-ld --enable-__cxa_atexit --enable-checking=release --enable-gnu-unique-object --enable-initfini-array --enable-languages=c,c++ --enable-linker-build-id --enable-lto --enable-nls --enable-obsolete --enable-plugin --enable-targets=all --exec-prefix=/usr --host=aarch64-redhat-linux-gnu --includedir=/usr/include --infodir=/usr/share/info --libexecdir=/usr/libexec --localstatedir=/var --mandir=/usr/share/man --prefix=/usr --program-prefix=x86_64-linux-gnu- --sbindir=/usr/bin --sharedstatedir=/var/lib --sysconfdir=/etc --target=x86_64-linux-gnu --with-bugurl=http://bugzilla.redhat.com/bugzilla/ --with-gcc-major-version-only --with-isl --with-newlib --with-plugin-ld=/usr/bin/x86_64-linux-gnu-ld --with-sysroot=/usr/x86_64-linux-gnu/sys-root --with-system-libunwind --with-system-zlib --without-headers --with-arch_32=i686 --with-tune=generic --enable-cet --enable-gnu-indirect-function --with-linker-hash-style=gnu]
+        ignore line: [Thread model: single]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7f9e7.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/16/cc1 -quiet -v /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_7f9e7.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/cc9vEtIY.s]
+        ignore line: [GNU C23 (GCC) version 16.1.1 20260501 (Red Hat Cross 16.1.1-1) (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 16.1.1 20260501 (Red Hat 16.1.1-1)  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/local/include"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/usr/x86_64-linux-gnu/sys-root/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/16/include]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/16/include-fixed]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 220f5235ee523191ea888f7f6700a90f]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7f9e7.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/as -v --64 -o CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj /tmp/cc9vEtIY.s]
+        ignore line: [GNU assembler version 2.46 (x86_64-linux-gnu) using BFD version version 2.46-1.fc44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/16/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/16/../../../../x86_64-linux-gnu/bin/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/16/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /home/ellicode/.local/lib/python3.14/site-packages/cmake/data/bin/cmake -E rm -f libcmTC_7f9e7.a && x86_64-linux-gnu-ar qc libcmTC_7f9e7.a  CMakeFiles/cmTC_7f9e7.dir/CMakeCCompilerABI.c.obj && x86_64-linux-gnu-ranlib libcmTC_7f9e7.a && :]
+        ignore line: []
+        ignore line: []
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+...
