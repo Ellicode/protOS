@@ -267,7 +267,7 @@ int atoi(const char *nptr) {
 }
 
 static char *itos(int64_t num) {
-    static char str[12];
+    static char str[21];
     int i = 0;
     int isNegative = 0;
     if (num < 0) {
@@ -313,12 +313,61 @@ char *htos(uint64_t value) {
     return &str[i + 1];
 };
 
+static char *dtos(double num, int precision, char *buffer) {
+    int pos = 0;
+
+    if (num < 0.0) {
+        buffer[pos++] = '-';
+        num = -num;
+    }
+
+    double rounding = 0.5;
+    for (int i = 0; i < precision; ++i) {
+        rounding /= 10.0;
+    }
+    num += rounding;
+
+    long long int_part = (long long)num;
+    double frac_part = num - (double)int_part;
+
+    int int_start = pos;
+    if (int_part == 0) {
+        buffer[pos++] = '0';
+    } else {
+        long long temp = int_part;
+        while (temp > 0) {
+            buffer[pos++] = (char)((temp % 10) + '0');
+            temp /= 10;
+        }
+        for (int i = int_start, j = pos - 1; i < j; i++, j--) {
+            char temp_char = buffer[i];
+            buffer[i] = buffer[j];
+            buffer[j] = temp_char;
+        }
+    }
+
+    if (precision > 0) {
+        buffer[pos++] = '.';
+        for (int i = 0; i < precision; i++) {
+            frac_part *= 10.0;
+            int digit = (int)frac_part;
+            buffer[pos++] = (char)(digit + '0');
+            frac_part -= (double)digit;
+        }
+    }
+
+    buffer[pos] = '\0';
+    return buffer;
+}
+
 int vsnprintf(char *str, size_t size, const char *format, va_list args) {
     if (str == NULL || size == 0) {
         return 0;
     }
 
     size_t written = 0;
+
+    char float_buf[64];
 
     for (size_t i = 0; format[i] != '\0'; i++) {
         if (format[i] == '%') {
@@ -342,18 +391,18 @@ int vsnprintf(char *str, size_t size, const char *format, va_list args) {
             if (format[i] == 'd') {
                 int value = va_arg(args, int);
                 arg_str = itos(value);
-            } 
-            else if (format[i] == 'x') {
+            } else if (format[i] == 'x') {
                 uint64_t value = va_arg(args, uint64_t);
                 arg_str = htos(value);
-            } 
-            else if (format[i] == 's') {
+            } else if (format[i] == 's') {
                 arg_str = va_arg(args, char *);
                 if (arg_str == NULL) {
                     arg_str = "(null)";
                 }
-            } 
-            else if (format[i] == '%') {
+            } else if (format[i] == 'f') {
+                double value = va_arg(args, double);
+                arg_str = dtos(value, 6, float_buf);
+            } else if (format[i] == '%') {
                 if (written < size - 1) {
                     str[written] = '%';
                 }

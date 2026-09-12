@@ -1,3 +1,6 @@
 .vscode/
 .ovmf/
 .iso/protOS
+.iso/NvVars
+
+build/

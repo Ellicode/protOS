@@ -54,3 +54,8 @@ extern void isr_call_16();  // x87 floating point error
 extern void isr_call_19();  // SIMD floating point error
 
 void idt_init();
+
+int interrupts_enabled();
+void enable_interrupts();
+void disable_interrupts();
+void restore_interrupts(int irqs);

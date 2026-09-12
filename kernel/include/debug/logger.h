@@ -8,9 +8,10 @@
 
 #pragma once
 #include "ui/console.h"
+#include "cpu/sse.h"
 
 #define kassert(format, ...) do { \
-    kprintf("[%8d] " format "\n", 0, ##__VA_ARGS__); \
+    kprintf("[%11d] " format "\n", 0, ##__VA_ARGS__); \
 } while (0)
 
 #define kerror(format, ...)     kassert("\e[31m err\e[0m: <%s:%d> " format, __FILE_NAME__, __LINE__, ##__VA_ARGS__)

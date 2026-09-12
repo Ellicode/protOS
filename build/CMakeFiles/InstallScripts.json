@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/ellicode/Documents/Code/protOS/build/cmake_install.cmake",
-		"/home/ellicode/Documents/Code/protOS/build/kernel/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

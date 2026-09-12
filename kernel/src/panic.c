@@ -29,15 +29,15 @@ const char *panic_messages[] = {
 
 void panic_handler(const char *message, isr_frame_t *frame) {
     kprintf("\e[31m!!! KERNEL PANIC !!!\n");
-    kprintf("reason: %s at 0x%x\n", message, frame->rip);
+    kprintf("reason: \"%s\" at 0x%x\n", message, frame->rip);
     kprintf("registers:\n");
     kprintf("rax: 0x%16x rbx: 0x%16x rcx: 0x%16x rdx: 0x%16x\n", frame->rax, frame->rbx, frame->rcx, frame->rdx);
-    kprintf("rdi: 0x%16x rsi: 0x%16x rbp: 0x%16x\n", frame->rdi, frame->rsi, frame->rbp);
     kprintf("r8:  0x%16x r9:  0x%16x r10: 0x%16x r11: 0x%16x\n", frame->r8, frame->r9, frame->r10, frame->r11);
     kprintf("r12: 0x%16x r13: 0x%16x r14: 0x%16x r15: 0x%16x\n", frame->r12, frame->r13, frame->r14, frame->r15);
+    kprintf("rdi: 0x%16x rsi: 0x%16x rbp: 0x%16x\n", frame->rdi, frame->rsi, frame->rbp);
 
     uint64_t cr0, cr2, cr3, cr4, cr8;
-    asm volatile(
+    __asm__ volatile(
         "mov %%cr0, %0\n\t"
         "mov %%cr2, %1\n\t"
         "mov %%cr3, %2\n\t"
@@ -48,6 +48,7 @@ void panic_handler(const char *message, isr_frame_t *frame) {
 
     kprintf("control registers:\n");
     kprintf("cr0: 0x%16x cr2: 0x%16x cr3: 0x%16x cr4: 0x%16x cr8: 0x%16x\n", cr0, cr2, cr3, cr4, cr8);
+    kprintf("\e[0m");
 
     while (1) {
         __asm__ ("hlt");

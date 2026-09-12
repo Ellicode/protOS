@@ -30,9 +30,6 @@ int serial_init() {
     // (not-loopback with IRQs enabled and OUT#1 and OUT#2 bits enabled)
     outb(SERIAL_PORT + 4, 0x0F);
     
-    serial_write('\n');
-    serial_write('\n');
-    serial_write('\n');
     return 0;
 }
 

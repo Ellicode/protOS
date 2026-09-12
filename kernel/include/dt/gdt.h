@@ -56,4 +56,4 @@ typedef struct tss_entry_t {
 
 extern void gdt_reload_segments(uint16_t cs, uint16_t ds, uint16_t tss);
 
-int gdt_init();
+void gdt_init();

@@ -15,11 +15,16 @@ add_executable(kernel
     src/dt/idt.c
     src/dt/idt.nasm
 
+    src/cpu/sse.c
+
     src/interrupts/isr.c
 
+    src/mem/pmm.c
+    src/mem/freelist.c
+
     src/boot.c
-    src/main.c
     src/panic.c
+    src/panic.asm
 )
 
 target_compile_definitions(kernel PRIVATE

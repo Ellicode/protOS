@@ -12,3 +12,4 @@
 extern const char *panic_messages[];
 
 void panic_handler(const char *message, isr_frame_t *frame);
+extern void panic(const char *message);

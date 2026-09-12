@@ -20,9 +20,14 @@ __attribute__((used, section(".limine_requests"))) static volatile struct limine
     .revision = 0,
 };
 
+__attribute__((used, section(".limine_requests"))) static volatile struct limine_hhdm_request hhdm_request = {
+    .id = LIMINE_HHDM_REQUEST_ID,
+    .revision = 0,
+};
+
 void limine_preboot() {
     g_boot_info.is_defined = 1;
-    strcpy(g_boot_info.protocol, "Limine");
+    strcpy(g_boot_info.protocol, "LIMINE");
 
     struct limine_framebuffer *fb = framebuffer_request.response->framebuffers[0];
     g_boot_info.framebuffer = (framebuffer_t) {
@@ -41,4 +46,6 @@ void limine_preboot() {
 
     g_boot_info.memmap              = (memmap_entry_t **)memmap_request.response->entries;
     g_boot_info.memmap_entry_count  = (int)memmap_request.response->entry_count;
+
+    g_boot_info.hhdm = hhdm_request.response->offset;
 }

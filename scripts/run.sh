@@ -28,13 +28,13 @@ case $1 in
                 -cdrom build/protOS.iso \
                 -boot d \
                 -vga std \
-                # -display sdl \
                 -serial stdio;;
     * )     qemu-system-x86_64 \
                 -m $ALLOCATED_MEMORY \
                 -drive if=pflash,format=raw,readonly=on,file=$LOCAL_OVMF_CODE_PATH \
                 -drive if=ide,format=raw,file=fat:rw:.iso \
                 -vga std \
-                # -display sdl \
+                -enable-kvm \
+                -cpu host \
                 -serial stdio;;
 esac

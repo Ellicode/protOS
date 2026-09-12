@@ -41,5 +41,3 @@ typedef struct boot_info_t {
 } boot_info_t;
 
 extern boot_info_t g_boot_info;
-
-int kboot();

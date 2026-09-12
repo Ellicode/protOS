@@ -78,3 +78,29 @@ void idt_init() {
 
     lidt(idtr);
 }
+
+int interrupts_enabled() {
+    uint64_t rflags;
+    __asm__ volatile (
+        "pushfq\n\t"
+        "pop %0" : 
+        "=r" (rflags)
+    );
+    return (rflags >> 9U) & 1U;
+}
+
+void enable_interrupts() {
+    __asm__ volatile ("sti");
+}
+
+void disable_interrupts() {
+    __asm__ volatile ("cli");
+}
+
+void restore_interrupts(int irqs) {
+    if (irqs) {
+        enable_interrupts();
+    } else {
+        disable_interrupts();
+    }
+}

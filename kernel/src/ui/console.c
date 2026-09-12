@@ -136,9 +136,6 @@ void print_char(char c) {
         cursor_row = max_rows - 1;
     }
 
-    #ifdef PROTO_DEBUG
-    serial_write(c);
-    #endif
     if (cursor_visibility == 1) { render_cursor(); }
 }
 
@@ -178,11 +175,15 @@ void print(char *str) {
     size_t len = strlen(str);
     size_t i = 0;
     while (i < len) {
+        serial_write(str[i]);
         if (str[i] == '\e' && str[i + 1] == '[') {
             volatile int args[4] = { 0 };
             int arg_len = 0;
             i += 2; // Skip \e and [
+            serial_write('\e');
+            serial_write('[');
             while (i < len) {
+                serial_write(str[i]);
                 if (str[i] == ';') {
                     if (arg_len < 15) { arg_len++; }
                 } else if (str[i] >= '0' && str[i] <= '9') {

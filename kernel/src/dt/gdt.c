@@ -9,8 +9,9 @@
 
 #include "debug/logger.h"
 #include "dt/gdt.h"
+#include "mem/pmm.h"
 
-tss_entry_t g_tss __attribute__((aligned(0x1000))) = {0};
+tss_entry_t g_tss __attribute__((aligned(PAGE_SIZE))) = {0};
 
 static gdt_entry_t gdt_generate_descriptor (
     uint64_t base,
@@ -71,7 +72,7 @@ static inline void lgdt(dtr_t gdtr) {
     );
 }
 
-int gdt_init() {
+void gdt_init() {
     static gdt_entry_t  gdt[7];
     static dtr_t        gdtr;
 
@@ -98,6 +99,4 @@ int gdt_init() {
 
     lgdt(gdtr);
     gdt_reload_segments(GDT_OFFSET_KERNEL_CODE, GDT_OFFSET_KERNEL_DATA, GDT_OFFSET_TSS);
-
-    return 0;
 }
