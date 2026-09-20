@@ -9,8 +9,6 @@
 #pragma once
 #include <stddef.h>
 
-#define PAGE_SIZE 0x1000
-
 typedef struct pmm_t {
     int     is_defined;
     char    type[16];

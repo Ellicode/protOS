@@ -28,6 +28,8 @@ case $1 in
                 -cdrom build/protOS.iso \
                 -boot d \
                 -vga std \
+                -enable-kvm \
+                -cpu host \
                 -serial stdio;;
     * )     qemu-system-x86_64 \
                 -m $ALLOCATED_MEMORY \

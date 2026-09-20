@@ -1,6 +1,6 @@
 /**
- * @file        pmm.c
- * @brief       Physical Memory Manager source file
+ * @file        freelist.c
+ * @brief       Freelist Physical Memory Manager source file
  * 
  * @author      Elliot Laborieux
  * @copyright   Copyright (c) 2026 Ellicode
@@ -36,6 +36,7 @@
 #include <stddef.h>
 #include "std/string.h"
 #include "mem/pmm.h"
+#include "mem/vmm.h"
 #include "mem/freelist.h"
 #include "boot.h"
 #include "_deps/limine.h"
@@ -148,7 +149,7 @@ size_t fpmm_size() {
     }
 
     size_t accumulated_size = 0;
-    for (int i = 0; i < g_boot_info.memmap_entry_count; i++) {
+    for (uint64_t i = 0; i < g_boot_info.memmap_entry_count; i++) {
         memmap_entry_t *entry = g_boot_info.memmap[i];
         accumulated_size += entry->length;
     }

@@ -9,6 +9,7 @@
 #include <stdarg.h>
 #include <stdint.h>
 #include <stddef.h>
+#include <stdbool.h>
 
 void *memmove(void *dest, const void *src, size_t len) {
     char *d = dest;
@@ -361,88 +362,114 @@ static char *dtos(double num, int precision, char *buffer) {
 }
 
 int vsnprintf(char *str, size_t size, const char *format, va_list args) {
-    if (str == NULL || size == 0) {
-        return 0;
-    }
-
     size_t written = 0;
-
     char float_buf[64];
+
+    // Helper macro to centralize buffer safety checks and character counting
+    #define EMIT(c) do { \
+        if (size > 0 && written < size - 1) { \
+            str[written] = (c); \
+        } \
+        written++; \
+    } while(0)
 
     for (size_t i = 0; format[i] != '\0'; i++) {
         if (format[i] == '%') {
             i++;
+            if (format[i] == '\0') { break; }
 
-            char pad = ' ';
+            bool left_align = false;
+            char pad_char = ' ';
             size_t width = 0;
+            int precision = -1; 
 
-            if (format[i] == '0') {
-                pad = '0';
+            while (format[i] == '-' || format[i] == '0') {
+                if (format[i] == '-') { left_align = true; }
+                if (format[i] == '0') { pad_char = '0'; }
                 i++;
             }
+            if (left_align) { pad_char = ' '; }
 
             while (format[i] >= '0' && format[i] <= '9') {
                 width = (width * 10) + (format[i] - '0');
                 i++;
             }
 
-            char *arg_str = NULL;
+            if (format[i] == '.') {
+                i++;
+                precision = 0;
+                while (format[i] >= '0' && format[i] <= '9') {
+                    precision = (precision * 10) + (format[i] - '0');
+                    i++;
+                }
+            }
+
+            // 4. Evaluate specifier
+            const char *arg_str = NULL;
+            size_t len = 0;
 
             if (format[i] == 'd') {
                 int value = va_arg(args, int);
                 arg_str = itos(value);
+                len = strlen(arg_str);
             } else if (format[i] == 'x') {
                 uint64_t value = va_arg(args, uint64_t);
                 arg_str = htos(value);
+                len = strlen(arg_str);
             } else if (format[i] == 's') {
                 arg_str = va_arg(args, char *);
                 if (arg_str == NULL) {
                     arg_str = "(null)";
                 }
+                len = strlen(arg_str);
+                // Apply string precision (max characters to print)
+                if (precision >= 0 && (size_t)precision < len) {
+                    len = precision;
+                }
             } else if (format[i] == 'f') {
                 double value = va_arg(args, double);
-                arg_str = dtos(value, 6, float_buf);
+                // Apply float precision (defaults to 6)
+                int p = (precision >= 0) ? precision : 6; 
+                arg_str = dtos(value, p, float_buf);
+                len = strlen(arg_str);
             } else if (format[i] == '%') {
-                if (written < size - 1) {
-                    str[written] = '%';
-                }
-                written++;
+                EMIT('%');
+                continue;
+            } else {
+                // Unknown specifier: print literally
+                EMIT('%');
+                EMIT(format[i]);
                 continue;
             }
 
-            if (arg_str != NULL) {
-                size_t len = strlen(arg_str);
-                
+            // 5. Output with alignment and padding
+            size_t pad_len = (width > len) ? (width - len) : 0;
 
-                while (*arg_str) {
-                    if (written < size - 1) {
-                        str[written] = *arg_str;
-                    }
-                    written++;
-                    arg_str++;
-                }
+            if (!left_align) {
+                for (size_t p = 0; p < pad_len; p++) { EMIT(pad_char); }
+            }
 
-                while (len < width) {
-                    if (written < size - 1) {
-                        str[written] = pad;
-                    }
-                    written++;
-                    width--;
-                }
+            for (size_t c = 0; c < len; c++) {
+                EMIT(arg_str[c]);
+            }
+
+            if (left_align) {
+                for (size_t p = 0; p < pad_len; p++) { EMIT(' '); }
             }
         } else {
-            if (written < size - 1) {
-                str[written] = format[i];
-            }
-            written++;
+            EMIT(format[i]);
         }
     }
 
-    // Always null-terminate safely within limits
-    if (written < size) {
-        str[written] = '\0';
-    } else {
-        str[size - 1] = '\0';
+    #undef EMIT
+
+    // Safely null-terminate if the buffer is provided
+    if (size > 0) {
+        if (written < size) {
+            str[written] = '\0';
+        } else {
+            str[size - 1] = '\0';
+        }
     }
 
     return (int)written;

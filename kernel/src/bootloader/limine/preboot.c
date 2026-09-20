@@ -25,6 +25,11 @@ __attribute__((used, section(".limine_requests"))) static volatile struct limine
     .revision = 0,
 };
 
+__attribute__((used, section(".limine_requests"))) static volatile struct limine_executable_address_request executable_address_request = {
+    .id = LIMINE_EXECUTABLE_ADDRESS_REQUEST_ID,
+    .revision = 0,
+};
+
 void limine_preboot() {
     g_boot_info.is_defined = 1;
     strcpy(g_boot_info.protocol, "LIMINE");
@@ -46,6 +51,7 @@ void limine_preboot() {
 
     g_boot_info.memmap              = (memmap_entry_t **)memmap_request.response->entries;
     g_boot_info.memmap_entry_count  = (int)memmap_request.response->entry_count;
-
-    g_boot_info.hhdm = hhdm_request.response->offset;
+    g_boot_info.hhdm                = hhdm_request.response->offset;
+    g_boot_info.kernel_phys         = (void *)executable_address_request.response->physical_base;
+    g_boot_info.kernel_virt         = (void *)executable_address_request.response->virtual_base;
 }

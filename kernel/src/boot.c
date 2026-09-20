@@ -16,6 +16,7 @@
 #include "cpu/sse.h"
 #include "mem/freelist.h"
 #include "mem/pmm.h"
+#include "mem/vmm.h"
 #include "std/string.h"
 
 boot_info_t g_boot_info = (boot_info_t) { .is_defined = 0 };
@@ -37,11 +38,17 @@ void kboot() {
         g_boot_info.framebuffer.height, 
         g_boot_info.framebuffer.bpp
     );
+    kdebug("\e[40m  \e[41m  \e[42m  \e[43m  \e[44m  \e[45m  \e[46m  \e[47m  \e[0m");
+    kdebug("\e[100m  \e[101m  \e[102m  \e[103m  \e[104m  \e[105m  \e[106m  \e[107m  \e[0m");
 
     kdebug("Memory map entry count: %d", g_boot_info.memmap_entry_count);
-    for (int i = 0; i < g_boot_info.memmap_entry_count; i++) {
-        kdebug("(%d)\tbase: %16x size: %16x type: %d", i, g_boot_info.memmap[i]->base, g_boot_info.memmap[i]->length, g_boot_info.memmap[i]->type);
+    kdebug("+--------+--------------------+--------------------+------+");
+    kdebug("| Offset | Base               | Size               | Type |");
+    kdebug("+--------+--------------------+--------------------+------+");
+    for (uint64_t i = 0; i < g_boot_info.memmap_entry_count; i++) {
+        kdebug("| %-6d | 0x%-16x | 0x%-16x | %4d |", i, g_boot_info.memmap[i]->base, g_boot_info.memmap[i]->length, g_boot_info.memmap[i]->type);
     }
+    kdebug("+--------+--------------------+--------------------+------+");
 
     fpu_sse_init();
     ksuccess("SSE init");
@@ -54,15 +61,12 @@ void kboot() {
 
     fpmm_init();
     ksuccess("PMM init");
-    kinfo("Current PMM model: \"%s\"", g_pmm.type);
+    kdebug("Current PMM model: \"%s\"", g_pmm.type);
 
-    char *buf = palloc();
-    strcpy(buf, "hello from freelist");
-    kassert("Buffer contents: %s", buf);
-    pfree(buf);
-    kassert("Buffer freed (size=%d, used=%d)", psize(), pused());
+    vmm_init();
+    ksuccess("Paging init");
 
-    kinfo("Welcome to \e[36mProtOS\e[0m! Enjoy your stay :3");
+    kinfo("Welcome to \e[36mProtOS\e[37m! Enjoy your stay :3");
 
     while (1) {
         __asm__("hlt");

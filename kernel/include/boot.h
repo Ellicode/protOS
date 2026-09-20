@@ -37,7 +37,10 @@ typedef struct boot_info_t {
     framebuffer_t   framebuffer;
 
     memmap_entry_t  **memmap;
-    int             memmap_entry_count;
+    uint64_t        memmap_entry_count;
+
+    void            *kernel_phys;
+    void            *kernel_virt;
 } boot_info_t;
 
 extern boot_info_t g_boot_info;

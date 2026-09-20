@@ -16,33 +16,32 @@
 
 const uint32_t color_palette[] = {
     0x00000000,
-    0xFF000000,
-    0x00FF0000,
-    0xFFFF0000,
-    0x0000FF00,
-    0xFF00FF00,
-    0x00FFFF00,
-    0xFFFFFF00,
+    0xCC000000,
+    0x00CC0000,
+    0xCC770000,
+    0x0000CC00,
+    0xCC00CC00,
+    0x00CCCC00,
+    0xCCCCCC00,
 };
 
-/*
-const uint32_t color_palette[] = {
-    0x00000000,
-    0xFB2C3600,
-    0x00c95000,
-    0xf0b10000,
-    0x2b7fff00,
-    0xad46ff00,
-    0x00bba700,
+const uint32_t color_palette_bright[] = {
+    0x55555500,
+    0xFF555500,
+    0x55FF5500,
+    0xFFFF5500,
+    0x5555FF00,
+    0xFF55FF00,
+    0x55FFFF00,
     0xFFFFFF00,
 };
-*/
 
 uint64_t cursor_row     = 0; 
 uint64_t cursor_col     = 0;
 uint32_t current_fg     = color_palette[7];
 uint32_t current_bg     = color_palette[0];
 int cursor_visibility   = 0;
+int bright              = 0;
 
 void scroll_y(int cols) {
     if (cols == 0) { return; }
@@ -51,14 +50,11 @@ void scroll_y(int cols) {
     uint32_t fb_width = g_boot_info.framebuffer.width;
     uint32_t fb_height = g_boot_info.framebuffer.height;
 
-    // Note: Assuming pitch == width * 4. If pitch differs, use g_boot_info.framebuffer.pitch
     size_t row_bytes = fb_width * sizeof(uint32_t); 
     
-    // Get absolute value safely using unsigned math
     size_t abs_cols = (cols > 0) ? cols : -cols;
     size_t pixel_rows = abs_cols * FONT_HEIGHT;
 
-    // Prevent crashing if trying to scroll more than the whole screen
     if (pixel_rows >= fb_height) {
         memset(fb_base, 0, fb_height * row_bytes);
         return;
@@ -68,7 +64,6 @@ void scroll_y(int cols) {
     size_t bytes_to_move = (fb_height - pixel_rows) * row_bytes;
 
     if (cols > 0) {
-        // Scroll Up: Move data up, clear the bottom
         memmove(
             fb_base, 
             fb_base + offset_bytes, 
@@ -80,7 +75,6 @@ void scroll_y(int cols) {
             offset_bytes
         );
     } else {
-        // Scroll Down: Move data down, clear the top
         memmove(
             fb_base + offset_bytes, 
             fb_base, 
@@ -191,8 +185,15 @@ void print(char *str) {
                 } else if (str[i] == 'm') {
                     for (int j = 0; j <= arg_len; j++) {
                         int arg = args[j];
-                        if (arg == 0) {
-                            set_color(color_palette[7], color_palette[0]); // Reset escape code
+                        if (arg == 0) { // Reset escape code
+                            bright = 0;
+                            set_color(color_palette[7], color_palette[0]);
+                        } else if (arg == 1) {
+                            bright = 1;
+                        } else if (arg >= 90 && arg <= 97) {
+                            current_fg = color_palette_bright[arg - 90];
+                        } else if (arg >= 100 && arg <= 107) {
+                            current_bg = color_palette_bright[arg - 100];
                         } else if (arg >= 30 && arg <= 37) {
                             current_fg = color_palette[arg - 30];
                         } else if (arg >= 40 && arg <= 47) {

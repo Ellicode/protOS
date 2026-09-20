@@ -9,9 +9,9 @@
 
 #include "debug/logger.h"
 #include "dt/gdt.h"
-#include "mem/pmm.h"
+#include "mem/vmm.h"
 
-tss_entry_t g_tss __attribute__((aligned(PAGE_SIZE))) = {0};
+tss_entry_t g_tss __attribute__((aligned(PAGE_SIZE))) = { 0 };
 
 static gdt_entry_t gdt_generate_descriptor (
     uint64_t base,
@@ -79,8 +79,8 @@ void gdt_init() {
     gdt[0] = gdt_generate_descriptor(0, 0, 0b00000000, 0b0000);
     gdt[1] = gdt_generate_descriptor(GDT_ENTRY_BASE, GDT_ENTRY_LIMIT, 0b10011011, 0b1010); // Kernel code segment
     gdt[2] = gdt_generate_descriptor(GDT_ENTRY_BASE, GDT_ENTRY_LIMIT, 0b10010011, 0b1010); // Kernel data segment
-    gdt[3] = gdt_generate_descriptor(GDT_ENTRY_BASE, GDT_ENTRY_LIMIT, 0b11111011, 0b1010); // Kernel code segment
-    gdt[4] = gdt_generate_descriptor(GDT_ENTRY_BASE, GDT_ENTRY_LIMIT, 0b11110011, 0b1010); // Kernel data segment
+    gdt[3] = gdt_generate_descriptor(GDT_ENTRY_BASE, GDT_ENTRY_LIMIT, 0b11111011, 0b1010); // User code segment
+    gdt[4] = gdt_generate_descriptor(GDT_ENTRY_BASE, GDT_ENTRY_LIMIT, 0b11110011, 0b1010); // User data segment
 
     g_tss.iopb = sizeof(tss_entry_t);
 

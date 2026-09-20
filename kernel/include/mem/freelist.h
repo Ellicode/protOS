@@ -1,6 +1,6 @@
 /**
- * @file        pmm.h
- * @brief       Physical Memory Manager header file
+ * @file        freelist.h
+ * @brief       Freelist Physical Memory Manager header file
  * 
  * @author      Elliot Laborieux
  * @copyright   Copyright (c) 2026 Ellicode
