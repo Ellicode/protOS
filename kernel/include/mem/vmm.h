@@ -7,6 +7,7 @@
 */
 
 #pragma once
+#include <stddef.h>
 #include <stdint.h>
 
 extern uint64_t *g_kern_pml4;
@@ -30,3 +31,5 @@ extern void *kernel_start;
 extern void *kernel_end;
 
 void vmm_init();
+void vmm_map_range(uint64_t *pml4, void *virt, size_t size, uint64_t flags);
+void vmm_map_range_phys(uint64_t *pml4, void *virt, void *phys, size_t size, uint64_t flags);

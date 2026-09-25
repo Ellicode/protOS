@@ -15,8 +15,9 @@
 #include "drivers/serial.h"
 #include "cpu/sse.h"
 #include "mem/freelist.h"
-#include "mem/pmm.h"
 #include "mem/vmm.h"
+#include "mem/pmm.h"
+#include "mem/heap.h"
 #include "std/string.h"
 
 boot_info_t g_boot_info = (boot_info_t) { .is_defined = 0 };
@@ -65,6 +66,9 @@ void kboot() {
 
     vmm_init();
     ksuccess("Paging init");
+
+    heap_init();
+    ksuccess("Heap init");
 
     kinfo("Welcome to \e[36mProtOS\e[37m! Enjoy your stay :3");
 

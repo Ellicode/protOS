@@ -22,6 +22,7 @@ add_executable(kernel
     src/mem/pmm.c
     src/mem/vmm.c
     src/mem/freelist.c
+    src/mem/heap.c
 
     src/boot.c
     src/panic.c
