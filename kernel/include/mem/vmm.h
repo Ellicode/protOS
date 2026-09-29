@@ -21,7 +21,11 @@ extern uint64_t *g_kern_pml4;
 #define VMM_DIRTY       (1ULL << 6U)
 #define VMM_HUGE        (1ULL << 7U)
 #define VMM_GLOBAL      (1ULL << 8U)
+#define VMM_PAT         (1ULL << 12U)
 #define VMM_NX          (1ULL << 63U)
+
+// Index PAT entries with PWT, PCD and PAT
+#define VMM_WC          VMM_PWT
 
 #define PAGE_SIZE       0x1000
 #define PAGE_SIZE_2M    0x200000

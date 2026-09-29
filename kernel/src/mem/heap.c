@@ -24,7 +24,7 @@ void* kalloc(size_t size) {
         if (node->size >= size && node->flags & HEAP_FREE) {
             size_t remainder = node->size - size;
             if (remainder > sizeof(heap_node_t)) {
-                heap_node_t *new = node + sizeof(heap_node_t) + size;
+                heap_node_t *new = (void *)node + sizeof(heap_node_t) + size;
                 new->size   = remainder - sizeof(heap_node_t);
                 new->flags  = HEAP_FREE;
                 new->prev   = node;
@@ -40,7 +40,7 @@ void* kalloc(size_t size) {
 
             ticketlock_unlock(&heap_lock, lock);
 
-            void *ptr = node + sizeof(heap_node_t);
+            void *ptr = (void *)node + sizeof(heap_node_t);
             memset(ptr, 0, size);
             return ptr;
         }
@@ -110,10 +110,4 @@ void heap_init() {
     heap_root->prev = NULL;
     heap_root->next = NULL;
     heap_root->size = K_HEAP_MIN_SIZE;
-
-    char *str = kalloc(7);
-    strncpy(str, "Hello!", 7);
-    kassert("Buffer contents: %s", str);
-    kfree(str);
-    kassert("Buffer freed");
 }

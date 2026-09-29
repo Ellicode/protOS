@@ -30,7 +30,7 @@ add_executable(kernel
 )
 
 target_compile_definitions(kernel PRIVATE
-   PROTO_DEBUG
+#    PROTO_DEBUG
 )
 
 target_compile_options(kernel PRIVATE

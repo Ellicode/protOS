@@ -58,7 +58,7 @@ void fpmm_fill(uint64_t pages) {
     while (freelist_pmm_fill_entry < g_boot_info.memmap_entry_count && pages_added < pages) {
         memmap_entry_t *entry = g_boot_info.memmap[freelist_pmm_fill_entry];
 
-        if (entry->type != LIMINE_MEMMAP_USABLE) {
+        if (entry->type != LIMINE_MEMMAP_USABLE && entry->type != LIMINE_MEMMAP_BOOTLOADER_RECLAIMABLE) {
             freelist_pmm_fill_entry++;
             freelist_pmm_fill_offset = 0;
             continue;

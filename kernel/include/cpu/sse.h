@@ -8,9 +8,9 @@
 
 #pragma once
 
-#define CPUID_FEAT_FPU  (1 << 0)
-#define CPUID_FEAT_SSE  (1 << 25)
-#define CPUID_FEAT_SSE2 (1 << 26)
+#define CPUID_FEAT_FPU  (1ULL << 0U)
+#define CPUID_FEAT_SSE  (1ULL << 25U)
+#define CPUID_FEAT_SSE2 (1ULL << 26U)
 
 extern int g_sse_enabled;
 

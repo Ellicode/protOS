@@ -48,7 +48,7 @@ void *memset(void *dest, int val, size_t len) {
     return dest;
 }
 
-void *memcpy(void *dest, const void *src, size_t len) {
+void *memcpy(void *restrict dest, const void *restrict src, size_t len) {
     char *d = dest;
     const char *s = src;
     while (len--) {
@@ -65,7 +65,7 @@ size_t strlen(const char* str) {
 	return len;
 }
 
-char* strcat(char *dest, const char *src) {
+char* strcat(char *restrict dest, const char *restrict src) {
     size_t dest_len = strlen(dest);
     int i = 0;
     while (src[i] != '\0')
@@ -130,7 +130,7 @@ char *strtok(char *src, const char *delim) {
     return ret;
 }
 
-char* strcpy(char* dst, const char* src) {
+char* strcpy(char *restrict dst, const char *restrict src) {
     const size_t length = strlen(src);
     memcpy(dst, src, length + 1);
     return dst;
@@ -214,7 +214,7 @@ int strncmp(const char *s1, const char *s2, size_t n) {
     return 0;
 }
 
-char *strncpy(char *dst, const char *src, size_t n) {
+char *strncpy(char *restrict dst, const char *restrict src, size_t n) {
     if (n != 0) {
         char *d = dst;
         const char *s = src;

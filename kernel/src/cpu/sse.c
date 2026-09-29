@@ -35,6 +35,6 @@ void fpu_sse_init(void) {
 
         g_sse_enabled = 1;
     } else {
-        panic("FPU not detected on current device");
+        panic("CPU flag \"FPU\" unsupported");
     }
 }

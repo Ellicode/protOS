@@ -11,6 +11,7 @@
 #include "mem/pmm.h"
 #include "utils/align.h"
 #include "utils/ticketlock.h"
+#include "utils/msr.h"
 #include "boot.h"
 #include "_deps/limine.h"
 
@@ -144,7 +145,17 @@ void vmm_map_range_phys(uint64_t *pml4, void *virt, void *phys, size_t size, uin
     ticketlock_unlock(&vmm_lock, lock);
 }
 
+void pat_set_entry(uint64_t *pat, int idx, int pat_num) {
+    *pat &= ~(0xFFULL << (idx * 8U));
+    *pat |=  ((uint64_t)pat_num << (idx * 8U));
+}
+
 void vmm_init() {
+    uint64_t pat = rdmsr(0x277);
+    pat_set_entry(&pat, 0, 0); // UC
+    pat_set_entry(&pat, 1, 1); // WC
+    wrmsr(0x277, pat);
+
     void *pml4_phys = palloc(); // Allocate pml4
     if (pml4_phys == NULL) { kerror("Could not allocate kernel PML4 table"); return; }
 
@@ -167,19 +178,8 @@ void vmm_init() {
         g_boot_info.framebuffer.address, 
         g_boot_info.framebuffer.address - g_boot_info.hhdm, 
         g_boot_info.framebuffer.pitch * g_boot_info.framebuffer.height, 
-        VMM_WRITE
+        VMM_WRITE | VMM_WC
     );
-
-    // size_t freed = 0;
-    // for (size_t i = 0; i < g_boot_info.memmap_entry_count; i++) {
-    //     memmap_entry_t *entry = g_boot_info.memmap[i];
-    //     if (entry->type == LIMINE_MEMMAP_BOOTLOADER_RECLAIMABLE) {
-    //         for (size_t j = 0; j < entry->length; j += PAGE_SIZE) {
-    //             pfree((void *)entry->base + j - g_boot_info.hhdm);
-    //             freed += PAGE_SIZE;
-    //         }
-    //     }
-    // }
     
     load_cr3(pml4_phys);
 }
