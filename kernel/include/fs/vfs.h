@@ -11,18 +11,24 @@
 #include <stdint.h>
 #include "types.h"
 
-typedef enum {
-    INODE_FILE,
-    INODE_FOLDER,
-    INODE_SYMLINK,
-} inode_type_t;
+#define S_IFMT      (0170000) 
+#define S_IFSOCK    (0140000) // Socket
+#define S_IFLNK     (0120000) // Symbolic link
+#define S_IFREG     (0100000) // Regular file
+#define S_IFBLK     (0060000) // Block device
+#define S_IFDIR     (0040000) // Directory
+#define S_IFCHR     (0020000) // Character device
+#define S_IFIFO     (0010000) // FIFO
 
 typedef struct inode_t {
-    uint64_t            id;
+    ino_t               id;
 
-    inode_type_t        type;
-    id_t                uid;
-    id_t                gid;
+    off_t               size;
+    mode_t              type;
+
+    mode_t              mode;
+    uid_t               uid;
+    gid_t               gid;
     struct superblock_t *parent_sb;
     struct superblock_t *child_sb;
 
@@ -50,4 +56,13 @@ typedef struct vfs_ops_t {
 typedef struct superblock_t {
     inode_t     *root;
     vfs_ops_t   ops;
+    char        *fs_name;
 } superblock_t;
+
+#define PATH_MAX        4096
+#define PATH_DELIM      '/'
+
+extern ino_t g_curr_ino;
+extern superblock_t *g_rootfs;
+
+void vfs_init();

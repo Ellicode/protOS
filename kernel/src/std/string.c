@@ -10,6 +10,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include "mem/heap.h"
 
 void *memmove(void *dest, const void *src, size_t len) {
     char *d = dest;
@@ -87,6 +88,56 @@ int strcmp(const char * s1, const char * s2) {
         }
     }
     return 0;
+}
+
+char *strtok_r(char *src, const char *delim, char **saveptr) {
+    char *str;
+
+    if (src != NULL)
+        str = src;
+    else
+        str = *saveptr;
+
+    if (str == NULL)
+        return NULL;
+
+    while (*str != '\0') {
+        bool is_delim = false;
+
+        for (size_t i = 0; delim[i] != '\0'; i++) {
+            if (*str == delim[i]) {
+                is_delim = true;
+                break;
+            }
+        }
+
+        if (!is_delim)
+            break;
+
+        str++;
+    }
+
+    if (*str == '\0') {
+        *saveptr = str;
+        return NULL;
+    }
+
+    char *token = str;
+
+    while (*str != '\0') {
+        for (size_t i = 0; delim[i] != '\0'; i++) {
+            if (*str == delim[i]) {
+                *str = '\0';
+                *saveptr = str + 1;
+                return token;
+            }
+        }
+
+        str++;
+    }
+
+    *saveptr = str;
+    return token;
 }
 
 char *strtok(char *src, const char *delim) {
@@ -261,6 +312,18 @@ char *strrchr(const char *s, int c) {
     }
 
     return last_match;
+}
+
+char *strndup(const char *s, size_t n) {
+    char *new = kalloc(n + 1);
+    if (new == NULL) { return NULL; }
+    strncpy(new, s, n);
+    new[strlen(s)] = '\0';
+    return new;
+}
+
+char *strdup(const char *s) {
+    return strndup(s, strlen(s));
 }
 
 int atoi(const char *nptr) {

@@ -8,6 +8,10 @@
 
 #pragma once
 #include <stdint.h>
+#include "types.h"
+
+#define MAX_MEMMAP_ENTRIES  64
+#define MAX_MODULES         8
 
 typedef struct framebuffer_t {
     void        *address;
@@ -29,18 +33,39 @@ typedef struct memmap_entry_t {
     uint64_t type;
 } memmap_entry_t;
 
+typedef struct boot_module_t {
+    void    *address;
+    off_t   size;
+    char    path[100];
+} boot_module_t;
+
 typedef struct boot_info_t {
     int             is_defined;
-    char            protocol[16];
+    char            *protocol;
 
     uint64_t        hhdm;
     framebuffer_t   framebuffer;
 
-    memmap_entry_t  **memmap;
+    memmap_entry_t  memmap[MAX_MEMMAP_ENTRIES];
     uint64_t        memmap_entry_count;
+
+    boot_module_t   modules[MAX_MODULES];
+    uint64_t        modules_count;
 
     void            *kernel_phys;
     void            *kernel_virt;
 } boot_info_t;
+
+typedef enum {
+    BOOT_MEM_USABLE,
+    BOOT_MEM_RESERVED,
+    BOOT_MEM_ACPI_RECLAIMABLE,
+    BOOT_MEM_ACPI_NVS,
+    BOOT_MEM_BAD,
+    BOOT_MEM_BOOTLOADER_RECLAIMABLE,
+    BOOT_MEM_KERNEL_AND_MODULES,
+    BOOT_MEM_FRAMEBUFFER,
+    BOOT_MEM_RESERVED_MAPPED,
+} boot_mem_type_t;
 
 extern boot_info_t g_boot_info;

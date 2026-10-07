@@ -24,13 +24,16 @@ add_executable(kernel
     src/mem/freelist.c
     src/mem/heap.c
 
+    src/fs/vfs.c
+    src/fs/tarfs.c
+
     src/boot.c
     src/panic.c
     src/panic.asm
 )
 
 target_compile_definitions(kernel PRIVATE
-#    PROTO_DEBUG
+    # PROTO_DEBUG
 )
 
 target_compile_options(kernel PRIVATE

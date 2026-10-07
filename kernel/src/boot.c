@@ -20,6 +20,7 @@
 #include "mem/heap.h"
 #include "std/string.h"
 #include "utils/msr.h"
+#include "fs/vfs.h"
 
 boot_info_t g_boot_info = (boot_info_t) { .is_defined = 0 };
 
@@ -48,7 +49,7 @@ void kboot() {
     kdebug("| Offset | Base               | Size               | Type |");
     kdebug("+--------+--------------------+--------------------+------+");
     for (uint64_t i = 0; i < g_boot_info.memmap_entry_count; i++) {
-        kdebug("| %-6d | 0x%-16x | 0x%-16x | %4d |", i, g_boot_info.memmap[i]->base, g_boot_info.memmap[i]->length, g_boot_info.memmap[i]->type);
+        kdebug("| %-6d | 0x%-16x | 0x%-16x | %4d |", i, g_boot_info.memmap[i].base, g_boot_info.memmap[i].length, g_boot_info.memmap[i].type);
     }
     kdebug("+--------+--------------------+--------------------+------+");
 
@@ -72,6 +73,8 @@ void kboot() {
     ksuccess("Heap init");
 
     msr_check();
+
+    vfs_init();
 
     kinfo("Welcome to \e[36mProtOS\e[37m! Enjoy your stay :3");
 

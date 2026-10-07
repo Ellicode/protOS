@@ -11,7 +11,7 @@
 
 typedef struct pmm_t {
     int     is_defined;
-    char    type[16];
+    char    *type;
 
     void    *(*alloc)();
     void    (*free)(void *);

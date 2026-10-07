@@ -56,16 +56,16 @@ void fpmm_fill(uint64_t pages) {
     uint64_t pages_added = 0;
 
     while (freelist_pmm_fill_entry < g_boot_info.memmap_entry_count && pages_added < pages) {
-        memmap_entry_t *entry = g_boot_info.memmap[freelist_pmm_fill_entry];
+        memmap_entry_t entry = g_boot_info.memmap[freelist_pmm_fill_entry];
 
-        if (entry->type != LIMINE_MEMMAP_USABLE && entry->type != LIMINE_MEMMAP_BOOTLOADER_RECLAIMABLE) {
+        if (entry.type != LIMINE_MEMMAP_USABLE && entry.type != LIMINE_MEMMAP_BOOTLOADER_RECLAIMABLE) {
             freelist_pmm_fill_entry++;
             freelist_pmm_fill_offset = 0;
             continue;
         }
 
-        uint64_t aligned_start = ALIGN_UP(entry->base, PAGE_SIZE);
-        uint64_t aligned_end   = ALIGN_DOWN(entry->base + entry->length, PAGE_SIZE);
+        uint64_t aligned_start = ALIGN_UP(entry.base, PAGE_SIZE);
+        uint64_t aligned_end   = ALIGN_DOWN(entry.base + entry.length, PAGE_SIZE);
 
         // dont allocate memory in the first 1MB
         if (aligned_start < 0x100000ULL) {
@@ -79,11 +79,11 @@ void fpmm_fill(uint64_t pages) {
         }
 
         if (freelist_pmm_fill_offset == 0) {
-            freelist_pmm_fill_offset = aligned_start - entry->base;
+            freelist_pmm_fill_offset = aligned_start - entry.base;
         }
 
-        while (entry->base + freelist_pmm_fill_offset + PAGE_SIZE <= aligned_end && pages_added < pages) {
-            uint64_t page_addr = entry->base + freelist_pmm_fill_offset;
+        while (entry.base + freelist_pmm_fill_offset + PAGE_SIZE <= aligned_end && pages_added < pages) {
+            uint64_t page_addr = entry.base + freelist_pmm_fill_offset;
             freelist_pmm_node_t *node = (freelist_pmm_node_t*)(page_addr + g_boot_info.hhdm);
             node->next = freelist_pmm_head;
             freelist_pmm_head = node;
@@ -92,7 +92,7 @@ void fpmm_fill(uint64_t pages) {
             freelist_pmm_fill_offset += PAGE_SIZE;
         }
 
-        if (entry->base + freelist_pmm_fill_offset + PAGE_SIZE > aligned_end) {
+        if (entry.base + freelist_pmm_fill_offset + PAGE_SIZE > aligned_end) {
             freelist_pmm_fill_entry++;
             freelist_pmm_fill_offset = 0;
         }
@@ -134,10 +134,10 @@ void fpmm_init() {
     fpmm_fill(512);
 
     g_pmm.is_defined    = 1;
-    strcpy(g_pmm.type, "FREELIST");
+    g_pmm.type          = "FREELIST";
 
     g_pmm.alloc = fpmm_allocate_page;
-    g_pmm.free = fpmm_free_page;
+    g_pmm.free  = fpmm_free_page;
 
     g_pmm.size = fpmm_size;
     g_pmm.used = fpmm_used;
@@ -150,8 +150,8 @@ size_t fpmm_size() {
 
     size_t accumulated_size = 0;
     for (uint64_t i = 0; i < g_boot_info.memmap_entry_count; i++) {
-        memmap_entry_t *entry = g_boot_info.memmap[i];
-        accumulated_size += entry->length;
+        memmap_entry_t entry = g_boot_info.memmap[i];
+        accumulated_size += entry.length;
     }
 
     total_usable_memory_bytes = accumulated_size;
