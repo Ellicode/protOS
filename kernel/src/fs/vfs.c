@@ -16,51 +16,60 @@
 ino_t g_curr_ino = 0;
 superblock_t *g_rootfs = NULL;
 
+inode_t *vfs_lookup(inode_t *parent, const char *path) {
+    if (!parent->parent_sb) {
+        kwarn("inode %d does not have a parent superblock", parent->id);
+        return NULL;
+    }
+    if (!parent->parent_sb->ops.lookup) {
+        kwarn("filesystem \"%s\" does not support LOOKUP", parent->parent_sb->fs_name);
+        return NULL;
+    }
+
+    inode_t *out;
+    int res = parent->parent_sb->ops.lookup(parent, path, &out);
+
+    if (res != 0) { return NULL; }
+
+    return out;
+}
+
 inode_t *vfs_resolve_path(inode_t *parent, const char *path) {
-    inode_t *cwd = parent;
+    inode_t *current = parent;
     if (path[0] == PATH_DELIM) {
         if (strlen(path) == 1) { 
             return g_rootfs->root; 
         }
-        cwd = g_rootfs->root;
+        current = g_rootfs->root;
     }
 
-    uint8_t last = 0;
-    char *tmp_path = strdup(path);
-    if (tmp_path == NULL) { return NULL; }
-    char *current_ptr = tmp_path;
+    char *saveptr = NULL;
+    char *temp_path = strdup(path);
+    char *component = strtok_r(temp_path, "/", &saveptr);
 
-    while (!last) {
-        char *next = strchr(current_ptr, PATH_DELIM);
-        if (next == NULL) { 
-            last = 1;
-            next = strchr(current_ptr, '\0');
-        }
-        
-        size_t len = next - current_ptr;
-        if (len == 0) { 
-            current_ptr++;
+    while (component) {
+        if (component[0] == '\0' || strcmp(component, ".") == 0) {
+            component = strtok_r(NULL, "/", &saveptr);
             continue;
         }
 
-        char seg[len + 1];
-        strncpy(seg, current_ptr, len);
-        seg[len] = '\0';
+        char *next = strtok_r(NULL, "/", &saveptr);
+        current = vfs_lookup(current, component);
+        if (current == NULL) { break; }
 
-        current_ptr += last ? len : len + 1;
-
-        kassert("%s, %d", seg, len);
+        component = next;
     }
 
-    kfree(tmp_path);
-    return NULL;
-}
-
-int vfs_mount(superblock_t *child_sb, char *path) {
-
+    kfree(temp_path);
+    return current;
 }
 
 void vfs_init() {
     g_rootfs = tarfs_init();
     ksuccess("Mounted \"%s\" filesystem at \"%s\".", g_rootfs->fs_name, "/");
+
+    kassert("test path /system/bin/../bin/ls");
+    inode_t *res = vfs_resolve_path(g_rootfs->root, "/system/bin/../bin/ls");
+    if (res == NULL) { return; }
+    kassert("inode { id: %d, size: %d bytes, name: \"%s\" }", res->id, res->size, ((tarfs_node_t *)res->data)->name);
 }

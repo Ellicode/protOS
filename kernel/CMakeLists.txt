@@ -73,4 +73,20 @@ add_custom_command(
     VERBATIM
 )
 
+add_custom_command(
+    TARGET      kernel
+    POST_BUILD
+    COMMAND     ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}"
+    COMMAND     xorriso -as mkisofs -R -J
+                        -b limine/limine-bios-cd.bin 
+                        -no-emul-boot
+                        -boot-load-size 4 -boot-info-table 
+                        --efi-boot limine/limine-uefi-cd.bin
+                        -efi-boot-part --efi-boot-image
+                        --protective-msdos-label 
+                        "${CMAKE_SOURCE_DIR}/.iso" -o "${CMAKE_BINARY_DIR}/protOS.iso" 
+    COMMENT     "Generating ISO image"
+    VERBATIM
+)
+
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

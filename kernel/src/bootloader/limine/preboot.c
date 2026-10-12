@@ -70,7 +70,7 @@ void limine_preboot() {
 
     if (memmap_request.response) {
         g_boot_info.memmap_entry_count  = (int)memmap_request.response->entry_count;
-        for (int i = 0; i < g_boot_info.memmap_entry_count; i++) {
+        for (uint64_t i = 0; i < g_boot_info.memmap_entry_count; i++) {
             struct limine_memmap_entry *entry = memmap_request.response->entries[i];
 
             g_boot_info.memmap[i].base      = entry->base;
@@ -81,7 +81,7 @@ void limine_preboot() {
 
     if (module_request.response) {
         g_boot_info.modules_count       = (int)module_request.response->module_count;
-        for (int i = 0; i < g_boot_info.modules_count; i++) {
+        for (uint64_t i = 0; i < g_boot_info.modules_count; i++) {
             struct limine_file *entry = module_request.response->modules[i];
 
             g_boot_info.modules[i].address  = entry->address;

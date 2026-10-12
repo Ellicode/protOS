@@ -93,13 +93,15 @@ int strcmp(const char * s1, const char * s2) {
 char *strtok_r(char *src, const char *delim, char **saveptr) {
     char *str;
 
-    if (src != NULL)
+    if (src != NULL) {
         str = src;
-    else
+    } else {
         str = *saveptr;
+    }
 
-    if (str == NULL)
+    if (str == NULL) {
         return NULL;
+    }
 
     while (*str != '\0') {
         bool is_delim = false;
@@ -111,8 +113,9 @@ char *strtok_r(char *src, const char *delim, char **saveptr) {
             }
         }
 
-        if (!is_delim)
+        if (!is_delim) {
             break;
+        }
 
         str++;
     }
