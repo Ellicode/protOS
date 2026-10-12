@@ -68,7 +68,7 @@ target_link_options(kernel PRIVATE
 add_custom_command(
     TARGET      kernel
     POST_BUILD
-    COMMAND     ${CMAKE_COMMAND} -E copy "$<TARGET_FILE:kernel>" "../../.iso/protOS"
+    COMMAND     ${CMAKE_COMMAND} -E copy "$<TARGET_FILE:kernel>" "${CMAKE_SOURCE_DIR}/.iso/protOS"
     COMMENT     "Copying kernel to ISO"
     VERBATIM
 )
@@ -86,6 +86,14 @@ add_custom_command(
                         --protective-msdos-label 
                         "${CMAKE_SOURCE_DIR}/.iso" -o "${CMAKE_BINARY_DIR}/protOS.iso" 
     COMMENT     "Generating ISO image"
+    VERBATIM
+)
+
+add_custom_command(
+    TARGET      kernel
+    POST_BUILD
+    COMMAND     tar -cf "${CMAKE_SOURCE_DIR}/.iso/initrd.tar" -C "${CMAKE_SOURCE_DIR}/.initrd" .
+    COMMENT     "Generating initrd"
     VERBATIM
 )
 

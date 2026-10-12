@@ -1,9 +1,13 @@
 .vscode/
 .ovmf/
+
 .iso/protOS
 .iso/NvVars
 .iso/efi/
 .iso/limine/
+.iso/initrd.tar
+
 .tmp/
+.initrd/bin/
 
 build/

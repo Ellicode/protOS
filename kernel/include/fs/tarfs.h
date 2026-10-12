@@ -42,12 +42,12 @@ typedef struct __attribute__((packed)) {
 } ustar_node_t;
 
 typedef struct tarfs_node_t {
-    char                    name[100];
-    off_t                   offset;
-    inode_t                 inode;
-    struct tarfs_node_t*    parent;
-    struct tarfs_node_t*    child;
-    struct tarfs_node_t*    next;
+    char                name[100];
+    void                *addr;
+    inode_t             inode;
+    struct tarfs_node_t *parent;
+    struct tarfs_node_t *child;
+    struct tarfs_node_t *next;
 } tarfs_node_t;
 
 superblock_t *tarfs_init();

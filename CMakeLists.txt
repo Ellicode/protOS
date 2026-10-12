@@ -6,7 +6,7 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-project(ProtOS
+project(protOS
     VERSION                     1.0.0
     DESCRIPTION                 "An x86-64 operating system"
     LANGUAGES                   C ASM_NASM

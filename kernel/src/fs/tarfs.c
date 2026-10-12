@@ -63,8 +63,11 @@ static tarfs_node_t *tarfs_create_node(tarfs_node_t *parent, const char *name, u
 static tarfs_node_t *tarfs_map_path(tarfs_node_t *root, ustar_node_t *header) {
     tarfs_node_t *current = root;
 
+    char path_buf[100];
+    strncpy(path_buf, header->file_name, sizeof(path_buf));
+    
     char *saveptr = NULL;
-    char *component = strtok_r(header->file_name, "/", &saveptr);
+    char *component = strtok_r(path_buf, "/", &saveptr);
 
     while (component) {
         if (component[0] == '\0' || strcmp(component, ".") == 0) {
@@ -83,7 +86,9 @@ static tarfs_node_t *tarfs_map_path(tarfs_node_t *root, ustar_node_t *header) {
                 strcpy(node.file_size, "00000000000");
             }
 
-            if (!tarfs_create_node(current, component, &node)) { return NULL; }
+            tarfs_node_t *new_node = tarfs_create_node(current, component, &node);
+            if (!new_node) { return NULL; }
+            new_node->addr = (void *)((uintptr_t)header + 512);
         }
 
         current = child;
@@ -101,6 +106,20 @@ static int tarfs_lookup(inode_t *parent, const char *name, inode_t **out) {
     return 0;
 }
 
+static size_t tarfs_read(file_descriptor_t *fd, void *buffer, size_t count) {
+    tarfs_node_t *node = fd->inode->data;
+    
+    if (fd->off >= node->inode.size) { return 0; } 
+
+    size_t rem = node->inode.size - fd->off;
+    size_t to_read = (count < rem) ? count : rem;
+
+    void *data = node->addr + fd->off;    
+    memcpy(buffer, data, to_read); 
+
+    return to_read;
+}
+
 superblock_t *tarfs_init() {
     if (g_boot_info.modules_count == 0) { 
         kerror("No boot modules detected. Please check your %s bootloader configuration.", g_boot_info.protocol);
@@ -115,6 +134,8 @@ superblock_t *tarfs_init() {
     g_tarfs_sb = kalloc(sizeof(superblock_t));
     g_tarfs_sb->fs_name             = "TARFS";
     g_tarfs_sb->ops.lookup          = tarfs_lookup;
+    g_tarfs_sb->ops.read            = tarfs_read;
+
     g_tarfs_sb->root                = &g_tarfs_root->inode;
 
     g_tarfs_root->inode.parent_sb   = g_tarfs_sb;

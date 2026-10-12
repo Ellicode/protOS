@@ -8,6 +8,12 @@ It all started when I wanted to learn C and had the not-so-brilliant idea to mak
 
 ## Building
 
+First, install the required limine dependencies using the builtin scaffolding script
+
+```sh
+./scripts/scaffold.sh
+```
+
 Since my build system of choice is CMake, compiling the kernel is actually pretty simple. Here are the commands below:
 
 ```sh
