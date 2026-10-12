@@ -2,5 +2,8 @@
 .ovmf/
 .iso/protOS
 .iso/NvVars
+.iso/efi/
+.iso/limine/
+.tmp/
 
 build/
