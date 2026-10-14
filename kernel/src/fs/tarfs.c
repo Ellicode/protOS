@@ -50,7 +50,7 @@ static tarfs_node_t *tarfs_create_node(tarfs_node_t *parent, const char *name, u
     strcpy(node->name, name);
     node->parent            = parent;
     node->inode.type        = us_types[(uint32_t)us_node->type];
-    node->inode.size        = parsed_size;
+    node->inode.size        = parsed_size + 1;
     node->inode.data        = node;
     node->inode.parent_sb   = g_tarfs_sb;
     node->inode.id          = ++g_curr_ino;
@@ -107,6 +107,8 @@ static int tarfs_lookup(inode_t *parent, const char *name, inode_t **out) {
 }
 
 static size_t tarfs_read(file_descriptor_t *fd, void *buffer, size_t count) {
+    if (buffer == NULL) { return -1; }
+
     tarfs_node_t *node = fd->inode->data;
     
     if (fd->off >= node->inode.size) { return 0; } 

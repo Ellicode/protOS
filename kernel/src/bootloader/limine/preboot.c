@@ -35,6 +35,11 @@ __attribute__((used, section(".limine_requests"))) static volatile struct limine
     .revision = 0,
 };
 
+__attribute__((used, section(".limine_requests"))) static volatile struct limine_rsdp_request rsdp_request = {
+    .id = LIMINE_RSDP_REQUEST_ID,
+    .revision = 0,
+};
+
 static int memmap_entry_types[] = {
     [LIMINE_MEMMAP_USABLE] = BOOT_MEM_USABLE,
     [LIMINE_MEMMAP_RESERVED] = BOOT_MEM_RESERVED,
@@ -97,5 +102,9 @@ void limine_preboot() {
     if (executable_address_request.response) {
         g_boot_info.kernel_phys         = (void *)executable_address_request.response->physical_base;
         g_boot_info.kernel_virt         = (void *)executable_address_request.response->virtual_base;
+    }
+
+    if (rsdp_request.response) {
+        g_boot_info.rsdp                = rsdp_request.response->address;
     }
 }

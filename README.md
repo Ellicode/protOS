@@ -42,7 +42,7 @@ Here are the different writing conventions used throughout the project (heavily 
 
 ```
 Macros:                     SCREAMING_SNAKE_CASE
-Functions:                  snake_case
+Functions:                  snake_case (should be 16 characters or less for readability)
 Structs & Typedefs:         snake_case
 Enums:                      snake_case
 

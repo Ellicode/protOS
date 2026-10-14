@@ -14,11 +14,13 @@
 #include "dt/idt.h"
 #include "drivers/serial.h"
 #include "cpu/sse.h"
+#include "cpu/acpi.h"
 #include "mem/freelist.h"
 #include "mem/vmm.h"
 #include "mem/pmm.h"
 #include "mem/heap.h"
 #include "std/string.h"
+#include "interrupts/apic.h"
 #include "utils/msr.h"
 #include "fs/vfs.h"
 
@@ -75,6 +77,13 @@ void kboot() {
     msr_check();
 
     vfs_init();
+    ksuccess("VFS init");
+
+    acpi_init();
+    ksuccess("ACPI init");
+
+    apic_init();
+    ksuccess("APIC init");
 
     kinfo("Welcome to \e[36mProtOS\e[37m! Enjoy your stay :3");
 

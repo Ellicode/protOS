@@ -16,8 +16,10 @@ add_executable(kernel
     src/dt/idt.nasm
 
     src/cpu/sse.c
+    src/cpu/acpi.c
 
     src/interrupts/isr.c
+    src/interrupts/apic.c
 
     src/mem/pmm.c
     src/mem/vmm.c
@@ -33,7 +35,7 @@ add_executable(kernel
 )
 
 target_compile_definitions(kernel PRIVATE
-    # PROTO_DEBUG
+    PROTO_DEBUG
 )
 
 target_compile_options(kernel PRIVATE
@@ -92,7 +94,7 @@ add_custom_command(
 add_custom_command(
     TARGET      kernel
     POST_BUILD
-    COMMAND     tar -cf "${CMAKE_SOURCE_DIR}/.iso/initrd.tar" -C "${CMAKE_SOURCE_DIR}/.initrd" .
+    COMMAND     tar -vcf "${CMAKE_SOURCE_DIR}/.iso/initrd.tar" -C "${CMAKE_SOURCE_DIR}/.initrd" .
     COMMENT     "Generating initrd"
     VERBATIM
 )

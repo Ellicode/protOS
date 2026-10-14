@@ -96,12 +96,4 @@ size_t kread(file_descriptor_t *fd, void *buffer, size_t count) {
 void vfs_init() {
     g_rootfs = tarfs_init();
     ksuccess("Mounted \"%s\" filesystem at \"%s\".", g_rootfs->fs_name, "/");
-
-    file_descriptor_t *fd;
-    kopen(g_rootfs->root, "hello.txt", 0, &fd);
-    kassert("name: \"%s\", size: %d, addr: %x", ((tarfs_node_t *)fd->inode->data)->name, fd->inode->size, ((tarfs_node_t *)fd->inode->data)->addr);
-
-    char *buf = kalloc(fd->inode->size);
-    int ret = kread(fd, buf, fd->inode->size);
-    kassert("ret: %d, contents: %s", ret, buf);
 }

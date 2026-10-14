@@ -54,6 +54,8 @@ typedef struct boot_info_t {
 
     void            *kernel_phys;
     void            *kernel_virt;
+
+    void            *rsdp;
 } boot_info_t;
 
 typedef enum {
