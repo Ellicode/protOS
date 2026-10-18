@@ -26,6 +26,7 @@ extern uint64_t *g_kern_pml4;
 
 // Index PAT entries with PWT, PCD and PAT
 #define VMM_WC          VMM_PWT
+#define VMM_UC
 
 #define PAGE_SIZE       0x1000
 #define PAGE_SIZE_2M    0x200000

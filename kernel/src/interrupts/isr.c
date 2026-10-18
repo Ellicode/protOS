@@ -17,4 +17,5 @@ void isr_handler(isr_frame_t *frame) {
     if (vec < EXCEPTION_COUNT) {
         panic_handler(panic_messages[frame->vector], frame);
     }
+    kdebug("Uncaught interrupt recieved (vec: %d)", frame->vector);
 }

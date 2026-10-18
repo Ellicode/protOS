@@ -72,6 +72,8 @@ void idt_init() {
         idt[i] = idt_generate_descriptor(isr_exception_handlers[i], 0b10001110);
     }
 
+    idt[32] = idt_generate_descriptor(isr_call_32, 0b10001110); // APIC timer
+
     idtr.base = (uint64_t)idt;
     idtr.limit = sizeof(idt) - 1;
     kdebug("IDTR (base=0x%x, limit=0x%x)", idtr.base, idtr.limit);

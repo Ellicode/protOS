@@ -5,10 +5,14 @@
  * @author      Elliot Laborieux
  * @copyright   Copyright (c) 2026 Ellicode
 */
+
 #include "debug/logger.h"
 #include "cpu/acpi.h"
 #include "std/string.h"
+#include "utils/io.h"
 #include "interrupts/apic.h"
+#include "interrupts/lapic.h"
+#include "interrupts/ioapic.h"
 #include "boot.h"
 #include "panic.h"
 
@@ -30,7 +34,6 @@ static madt_header_t *madt_fetch() {
                 return entry;
             }
         }
-        return NULL;
     } else if (rsdp->revision == 0) {
         rsdt_header_t *rsdt = (rsdt_header_t *)(rsdp->rsdt_address + g_boot_info.hhdm);
         if (!rsdt) {
@@ -45,9 +48,7 @@ static madt_header_t *madt_fetch() {
                 return entry;
             }
         }
-        return NULL;
     }
-    kerror("Unknown RSDP revision (%d)", rsdp->revision);
     return NULL;
 }
 
@@ -59,20 +60,46 @@ static void madt_parse(madt_header_t *madt) {
         madt_entry_header_t *entry_hdr = (madt_entry_header_t *)(madt_base + offset);
         if (entry_hdr->length == 0) { break; }
         kdebug("MADT entry type %d", entry_hdr->type);
+        
+        switch (entry_hdr->type) {
+            case MADT_ENTRY_IOAPIC:
+                ioapic_init((madt_ioapic_entry *)entry_hdr);
+                break;
+            case MADT_ENTRY_IOAPIC_OVERRIDE:
+                break;
+            default:
+                break;
+        }
 
         offset += entry_hdr->length;
     }    
 }
 
-void apic_init() {
-    madt_header_t *madt = madt_fetch();
+static void disable_pic() {
+    outb(PIC_COMMAND_MASTER, ICW_1);
+    outb(PIC_COMMAND_SLAVE, ICW_1);
+    outb(PIC_DATA_MASTER, ICW_2_M);
+    outb(PIC_DATA_SLAVE, ICW_2_S);
+    outb(PIC_DATA_MASTER, ICW_3_M);
+    outb(PIC_DATA_SLAVE, ICW_3_S);
+    outb(PIC_DATA_MASTER, ICW_4);
+    outb(PIC_DATA_SLAVE, ICW_4);
+    outb(PIC_DATA_MASTER, 0xFF);
+    outb(PIC_DATA_SLAVE, 0xFF);
+}
 
+void apic_init() {
+    disable_pic();
+    kdebug("PIC disabled");
+
+    madt_header_t *madt = madt_fetch();
     if (madt == NULL) {
         kerror("MADT table not present");
         return;
     }
-
-    kdebug("LAPIC address: 0x%x", madt->lapic_address);
-
     madt_parse(madt);
+    lapic_init(madt);
+
+    lapic_timer_init();
+    lvt_set_entry(LAPIC_REG_LVT_TIMER, 32);
 }

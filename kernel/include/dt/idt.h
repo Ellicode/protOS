@@ -53,6 +53,8 @@ extern void isr_call_14();  // Page fault
 extern void isr_call_16();  // x87 floating point error
 extern void isr_call_19();  // SIMD floating point error
 
+extern void isr_call_32();  // APIC timer
+
 void idt_init();
 
 int interrupts_enabled();

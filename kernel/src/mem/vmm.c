@@ -171,7 +171,6 @@ void vmm_init() {
         memmap_entry_t entry = g_boot_info.memmap[i];
         vmm_map_range_phys(g_kern_pml4, (void *)entry.base + g_boot_info.hhdm, (void *)entry.base, entry.length, VMM_WRITE);
     }
-
     // Map framebuffer
     vmm_map_range_phys(
         g_kern_pml4, 

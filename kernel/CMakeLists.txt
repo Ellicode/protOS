@@ -20,6 +20,8 @@ add_executable(kernel
 
     src/interrupts/isr.c
     src/interrupts/apic.c
+    src/interrupts/lapic.c
+    src/interrupts/ioapic.c
 
     src/mem/pmm.c
     src/mem/vmm.c

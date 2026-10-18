@@ -47,6 +47,6 @@ typedef struct rsdt_header_t {
     uint32_t        sdtAddresses[];
 } __attribute__ ((packed)) rsdt_header_t;
 
-#define CPUID_FLAG_ACPI (1U << 22U)
+#define CPUID_FLAG_ACPI (1ULL << 22U)
 
 void acpi_init();

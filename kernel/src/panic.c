@@ -32,9 +32,9 @@ void panic_handler(const char *message, isr_frame_t *frame) {
     char extra[255] = "";
     if (frame->vector == EXC_PAGE_FAULT) {
         snprintf(extra, 255, "(user=%d, write=%d, present=%d)", 
-            frame->error_code & (1U >> 2U),
-            frame->error_code & (1U >> 1U),
-            frame->error_code & (1U >> 0U)
+            frame->error_code & (1ULL >> 2U),
+            frame->error_code & (1ULL >> 1U),
+            frame->error_code & (1ULL >> 0U)
         );
     }
 

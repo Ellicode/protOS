@@ -27,11 +27,11 @@ static inline void msr_check() {
 static inline uint64_t rdmsr(msr_t msr) {
     uint32_t lo, hi;
     __asm__ volatile("rdmsr" : "=a"(lo), "=d"(hi) : "c"(msr));
-    return ((uint64_t)hi << 32) | lo;
+    return ((uint64_t)hi << 32U) | lo;
 }
 
 static inline void wrmsr(msr_t msr, uint64_t value) {
     uint32_t lo = (uint32_t)(value & 0xFFFFFFFF);
-    uint32_t hi = (uint32_t)(value >> 32);
+    uint32_t hi = (uint32_t)(value >> 32U);
     __asm__ volatile("wrmsr" : : "a"(lo), "d"(hi), "c"(msr));
 }
