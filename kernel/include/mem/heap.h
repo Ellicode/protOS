@@ -27,3 +27,5 @@ typedef struct heap_node_t {
 void heap_init();
 void* kalloc(size_t size);
 void kfree(void *ptr);
+
+extern char is_heap_init;

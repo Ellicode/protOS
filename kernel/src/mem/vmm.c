@@ -146,8 +146,8 @@ void vmm_map_range_phys(uint64_t *pml4, void *virt, void *phys, size_t size, uin
 }
 
 void pat_set_entry(uint64_t *pat, int idx, int pat_num) {
-    *pat &= ~(0xFFULL << (idx * 8U));
-    *pat |=  ((uint64_t)pat_num << (idx * 8U));
+    *pat &= ~(0xFFULL << ((7 - idx) * 8U));
+    *pat |=  ((uint64_t)pat_num << ((7 - idx) * 8U));
 }
 
 void vmm_init() {
@@ -169,6 +169,7 @@ void vmm_init() {
     // Map hhdm
     for (size_t i = 0; i < g_boot_info.memmap_entry_count; i++) {
         memmap_entry_t entry = g_boot_info.memmap[i];
+        if (entry.length == 0 || entry.type == BOOT_MEM_FRAMEBUFFER) { continue; }
         vmm_map_range_phys(g_kern_pml4, (void *)entry.base + g_boot_info.hhdm, (void *)entry.base, entry.length, VMM_WRITE);
     }
     // Map framebuffer
@@ -177,7 +178,7 @@ void vmm_init() {
         g_boot_info.framebuffer.address, 
         g_boot_info.framebuffer.address - g_boot_info.hhdm, 
         g_boot_info.framebuffer.pitch * g_boot_info.framebuffer.height, 
-        VMM_WRITE | VMM_WC
+        VMM_WRITE //| VMM_WC
     );
     
     load_cr3(pml4_phys);

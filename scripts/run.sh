@@ -25,7 +25,6 @@ echo -e "[${QEMU}qemu${RST}]: Launching qemu..."
 case $1 in
     iso )   qemu-system-x86_64 \
                 -m $ALLOCATED_MEMORY \
-                -drive if=pflash,format=raw,readonly=on,file=$LOCAL_OVMF_CODE_PATH \
                 -cdrom build/protOS.iso \
                 -boot d \
                 -vga std \

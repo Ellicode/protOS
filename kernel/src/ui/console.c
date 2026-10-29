@@ -13,6 +13,8 @@
 #include "ui/vfx.h"
 #include "drivers/serial.h"
 #include "std/string.h"
+#include "mem/heap.h"
+#include "debug/logger.h"
 
 const uint32_t color_palette[] = {
     0x00000000,
@@ -40,15 +42,18 @@ uint64_t cursor_row     = 0;
 uint64_t cursor_col     = 0;
 uint32_t current_fg     = color_palette[7];
 uint32_t current_bg     = color_palette[0];
-int cursor_visibility   = 0;
-int bright              = 0;
+char cursor_visibility  = 0;
+char bright             = 0;
+char is_fbcon_init      = 0;
+framebuffer_t *console_backbuffer = NULL;
 
 void scroll_y(int cols) {
+    if (!is_fbcon_init) { return; }
     if (cols == 0) { return; }
 
-    uint8_t *fb_base = (uint8_t *)g_boot_info.framebuffer.address;
-    uint32_t fb_width = g_boot_info.framebuffer.width;
-    uint32_t fb_height = g_boot_info.framebuffer.height;
+    uint8_t *fb_base = (uint8_t *)console_backbuffer->address;
+    uint32_t fb_width = console_backbuffer->width;
+    uint32_t fb_height = console_backbuffer->height;
 
     size_t row_bytes = fb_width * sizeof(uint32_t); 
     
@@ -86,10 +91,14 @@ void scroll_y(int cols) {
             offset_bytes
         );
     }
+
+    memcpy(g_boot_info.framebuffer.address, console_backbuffer->address, console_backbuffer->pitch * console_backbuffer->height);
 }
 
 void render_cursor() {
-    invert_rect(cursor_col * FONT_WIDTH, cursor_row * FONT_HEIGHT, FONT_WIDTH, FONT_HEIGHT);
+    if (!is_fbcon_init) { return; }
+    invert_rect(&g_boot_info.framebuffer, cursor_col * FONT_WIDTH, cursor_row * FONT_HEIGHT, FONT_WIDTH, FONT_HEIGHT);
+    invert_rect(console_backbuffer, cursor_col * FONT_WIDTH, cursor_row * FONT_HEIGHT, FONT_WIDTH, FONT_HEIGHT);
 }
 
 void print_char(char c) {
@@ -116,7 +125,8 @@ void print_char(char c) {
             }
             break;
         default:
-            draw_char(c, cursor_col * FONT_WIDTH, cursor_row * FONT_HEIGHT, current_fg, current_bg);
+            draw_char(&g_boot_info.framebuffer, c, cursor_col * FONT_WIDTH, cursor_row * FONT_HEIGHT, current_fg, current_bg);
+            draw_char(console_backbuffer, c, cursor_col * FONT_WIDTH, cursor_row * FONT_HEIGHT, current_fg, current_bg);
             cursor_col++;
             if (cursor_col >= max_cols) {
                 cursor_col = 0;
@@ -170,90 +180,92 @@ void print(char *str) {
     size_t i = 0;
     while (i < len) {
         serial_write(str[i]);
-        if (str[i] == '\e' && str[i + 1] == '[') {
-            volatile int args[4] = { 0 };
-            int arg_len = 0;
-            i += 2; // Skip \e and [
-            serial_write('\e');
-            serial_write('[');
-            while (i < len) {
-                serial_write(str[i]);
-                if (str[i] == ';') {
-                    if (arg_len < 15) { arg_len++; }
-                } else if (str[i] >= '0' && str[i] <= '9') {
-                    args[arg_len] = (args[arg_len] * 10) + (str[i] - '0');
-                } else if (str[i] == 'm') {
-                    for (int j = 0; j <= arg_len; j++) {
-                        int arg = args[j];
-                        if (arg == 0) { // Reset escape code
-                            bright = 0;
-                            set_color(color_palette[7], color_palette[0]);
-                        } else if (arg == 1) {
-                            bright = 1;
-                        } else if (arg >= 90 && arg <= 97) {
-                            current_fg = color_palette_bright[arg - 90];
-                        } else if (arg >= 100 && arg <= 107) {
-                            current_bg = color_palette_bright[arg - 100];
-                        } else if (arg >= 30 && arg <= 37) {
-                            current_fg = color_palette[arg - 30];
-                        } else if (arg >= 40 && arg <= 47) {
-                            current_bg = color_palette[arg - 40];
+        if (is_fbcon_init) { 
+            if (str[i] == '\e' && str[i + 1] == '[') {
+                volatile int args[4] = { 0 };
+                int arg_len = 0;
+                i += 2; // Skip \e and [
+                serial_write('\e');
+                serial_write('[');
+                while (i < len) {
+                    serial_write(str[i]);
+                    if (str[i] == ';') {
+                        if (arg_len < 15) { arg_len++; }
+                    } else if (str[i] >= '0' && str[i] <= '9') {
+                        args[arg_len] = (args[arg_len] * 10) + (str[i] - '0');
+                    } else if (str[i] == 'm') {
+                        for (int j = 0; j <= arg_len; j++) {
+                            int arg = args[j];
+                            if (arg == 0) { // Reset escape code
+                                bright = 0;
+                                set_color(color_palette[7], color_palette[0]);
+                            } else if (arg == 1) {
+                                bright = 1;
+                            } else if (arg >= 90 && arg <= 97) {
+                                current_fg = color_palette_bright[arg - 90];
+                            } else if (arg >= 100 && arg <= 107) {
+                                current_bg = color_palette_bright[arg - 100];
+                            } else if (arg >= 30 && arg <= 37) {
+                                current_fg = color_palette[arg - 30];
+                            } else if (arg >= 40 && arg <= 47) {
+                                current_bg = color_palette[arg - 40];
+                            }
                         }
+                        i++;
+                        break;
+                    } else if (str[i] == 'A') { // Move cursor up
+                        cursor_row -= args[0] == 0 ? 1 : args[0];
+                        set_cursor(cursor_row, cursor_col);
+                        i++;
+                        break;
+                    } else if (str[i] == 'B') { // Move cursor down
+                        cursor_row += args[0] == 0 ? 1 : args[0];
+                        set_cursor(cursor_row, cursor_col);
+                        i++;
+                        break;
+                    } else if (str[i] == 'C') { // Move cursor right
+                        cursor_col += args[0] == 0 ? 1 : args[0];
+                        set_cursor(cursor_row, cursor_col);
+                        i++;
+                        break;
+                    } else if (str[i] == 'D') { // Move cursor left
+                        cursor_col -= args[0] == 0 ? 1 : args[0];
+                        set_cursor(cursor_row, cursor_col);
+                        i++;
+                        break;
+                    } else if (str[i] == 'E') { // Move cursor to the next line
+                        cursor_row += args[0] == 0 ? 1 : args[0];
+                        set_cursor(cursor_row, 0);
+                        i++;
+                        break;
+                    } else if (str[i] == 'F') { // Move cursor to the previous line
+                        cursor_row -= args[0] == 0 ? 1 : args[0];
+                        set_cursor(cursor_row, 0);
+                        i++;
+                        break;
+                    } else if (str[i] == 'H') { // Set cursor position
+                        int x = args[0];
+                        int y = args[1];
+                        set_cursor(x, y);
+                        i++;
+                        break;
+                    } else if (str[i] == 'S') { // Scroll up
+                        int cols = args[0] == 0 ? 1 : args[0];
+                        scroll_y(cols);
+                    } else if (str[i] == 'T') { // Scroll down
+                        int cols = args[0] == 0 ? 1 : args[0];
+                        scroll_y(-cols);
+                    } else {
+                        i++;
+                        break;
                     }
                     i++;
-                    break;
-                } else if (str[i] == 'A') { // Move cursor up
-                    cursor_row -= args[0] == 0 ? 1 : args[0];
-                    set_cursor(cursor_row, cursor_col);
-                    i++;
-                    break;
-                } else if (str[i] == 'B') { // Move cursor down
-                    cursor_row += args[0] == 0 ? 1 : args[0];
-                    set_cursor(cursor_row, cursor_col);
-                    i++;
-                    break;
-                } else if (str[i] == 'C') { // Move cursor right
-                    cursor_col += args[0] == 0 ? 1 : args[0];
-                    set_cursor(cursor_row, cursor_col);
-                    i++;
-                    break;
-                } else if (str[i] == 'D') { // Move cursor left
-                    cursor_col -= args[0] == 0 ? 1 : args[0];
-                    set_cursor(cursor_row, cursor_col);
-                    i++;
-                    break;
-                } else if (str[i] == 'E') { // Move cursor to the next line
-                    cursor_row += args[0] == 0 ? 1 : args[0];
-                    set_cursor(cursor_row, 0);
-                    i++;
-                    break;
-                } else if (str[i] == 'F') { // Move cursor to the previous line
-                    cursor_row -= args[0] == 0 ? 1 : args[0];
-                    set_cursor(cursor_row, 0);
-                    i++;
-                    break;
-                } else if (str[i] == 'H') { // Set cursor position
-                    int x = args[0];
-                    int y = args[1];
-                    set_cursor(x, y);
-                    i++;
-                    break;
-                } else if (str[i] == 'S') { // Scroll up
-                    int cols = args[0] == 0 ? 1 : args[0];
-                    scroll_y(cols);
-                } else if (str[i] == 'T') { // Scroll down
-                    int cols = args[0] == 0 ? 1 : args[0];
-                    scroll_y(-cols);
-                } else {
-                    i++;
-                    break;
                 }
+            } else {
+                print_char(str[i]);
                 i++;
             }
-        } else {
-            print_char(str[i]);
-            i++;
-        }
+        } else { i++; }
     }
 }
 
@@ -263,7 +275,37 @@ int kprintf(const char *restrict format, ...) {
     char buffer[1024];
     int ret = vsnprintf(buffer, sizeof(buffer), format, args);
     va_end(args);
-
     print(buffer);
     return ret;
+}
+
+void fbcon_init() {
+    if (!is_heap_init) {
+        kwarn("Heap is required to be initialized to allocate the backbuffer");
+    }
+
+    console_backbuffer = kalloc(sizeof(framebuffer_t));
+    if (console_backbuffer == NULL) { 
+        return; 
+    }
+    
+    console_backbuffer->width = g_boot_info.framebuffer.width;
+    console_backbuffer->height = g_boot_info.framebuffer.height;
+    console_backbuffer->pitch = g_boot_info.framebuffer.pitch;
+    console_backbuffer->bpp = g_boot_info.framebuffer.bpp;
+    console_backbuffer->red_mask_size = g_boot_info.framebuffer.red_mask_size;
+    console_backbuffer->red_mask_shift = g_boot_info.framebuffer.red_mask_shift;
+    console_backbuffer->green_mask_size = g_boot_info.framebuffer.green_mask_size;
+    console_backbuffer->green_mask_shift = g_boot_info.framebuffer.green_mask_shift;
+    console_backbuffer->blue_mask_size = g_boot_info.framebuffer.blue_mask_size;
+    console_backbuffer->blue_mask_shift = g_boot_info.framebuffer.blue_mask_shift;
+
+    console_backbuffer->address = kalloc(console_backbuffer->pitch * console_backbuffer->height);
+    if (console_backbuffer->address == NULL) {
+        kfree(console_backbuffer);
+        console_backbuffer = NULL;
+        return;
+    }
+
+    is_fbcon_init = 1;
 }

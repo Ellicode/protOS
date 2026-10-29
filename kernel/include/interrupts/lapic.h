@@ -43,11 +43,9 @@ enum {
 
 #define LVT_DISABLED        (1ULL << 16U)
 
-#define LAPIC_READ_REG(off) (*(volatile uint32_t *)((uint8_t *)g_lapic_base + (off)))
-#define LAPIC_WRITE_REG(off, val) (*(volatile uint32_t *)((uint8_t *)g_lapic_base + (off)) = (val))
+#define LAPIC_READ_REG(reg) (*(volatile uint32_t *)((uint8_t *)g_lapic_base + (reg)))
+#define LAPIC_WRITE_REG(reg, val) (*(volatile uint32_t *)((uint8_t *)g_lapic_base + (reg)) = (val))
 
-void lvt_mask_entry(int reg);
-void lvt_unmask_entry(int reg);
 void lvt_set_entry(int reg, uint8_t vector);
 void lapic_timer_init();
-void lapic_init(madt_header_t *madt);
+void lapic_init(const madt_header_t *madt);

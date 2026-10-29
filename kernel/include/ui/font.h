@@ -16,6 +16,7 @@
 extern const unsigned char g_console_font[][16];
 
 void draw_char(
+    framebuffer_t *fb,
     char c,
     uint32_t x, uint32_t y,
     uint32_t fg, uint32_t bg

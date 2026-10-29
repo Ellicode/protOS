@@ -8,5 +8,6 @@ tar -xvf .tmp/limine-binary.tar.gz -C .tmp
 mv .tmp/limine-binary/BOOTX64.EFI .iso/efi/boot/BOOTX64.EFI
 mv .tmp/limine-binary/limine-bios-cd.bin .iso/limine/limine-bios-cd.bin
 mv .tmp/limine-binary/limine-uefi-cd.bin .iso/limine/limine-uefi-cd.bin
+mv .tmp/limine-binary/limine-bios.sys .iso/limine/limine-bios.sys
 
 rm -r .tmp

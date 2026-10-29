@@ -12,50 +12,66 @@
 #include <stdbool.h>
 #include "mem/heap.h"
 
-void *memmove(void *dest, const void *src, size_t len) {
-    char *d = dest;
-    const char *s = src;
-    if (d < s) {
-        while (len--) {
-            *d++ = *s++;
-        }
-    } else {
-        const char *lasts = s + (len-1);
-        char *lastd = d + (len-1);
-        while (len--) {
-            *lastd-- = *lasts--;
-        }
-    }
-    return dest;
+void *memcpy(void *restrict dest, const void *restrict src, size_t len) {
+    void *ret = dest;
+    size_t qwords = len / 8;
+    size_t tail = len % 8;
+
+    __asm__ volatile("rep movsq"
+        : "+D"(dest), "+S"(src), "+c"(qwords)
+        :: "memory");
+
+    __asm__ volatile("rep movsb"
+        : "+D"(dest), "+S"(src), "+c"(tail)
+        :: "memory");
+
+    return ret;
 }
 
-int memcmp(const void *str1, const void *str2, size_t count) {
-    const unsigned char *s1 = str1;
-    const unsigned char *s2 = str2;
+void *memmove(void *dest, const void *src, size_t len) {
+    uint8_t *d = dest;
+    const uint8_t *s = src;
 
-    while (count-- > 0) {
-        if (*s1++ != *s2++) {
-            return s1[-1] < s2[-1] ? -1 : 1;
-        }
+    if (d == s || len == 0) { return dest; }
+
+    if (d < s || d >= s + len) {
+        return memcpy(dest, src, len);
     }
-    return 0;
+
+    d += len;
+    s += len;
+
+    size_t tail = len % 8;
+    while (tail--) {
+        *--d = *--s;
+    }
+
+    size_t qwords = len / 8;
+    while (qwords--) {
+        d -= 8;
+        s -= 8;
+        *(uint64_t *)d = *(const uint64_t *)s;
+    }
+    return dest;
 }
 
 void *memset(void *dest, int val, size_t len) {
-    unsigned char *ptr = dest;
-    while (len-- > 0) {
-        *ptr++ = val;
-    }
-    return dest;
-}
+    void *ret = dest;
+    uint64_t pattern = (uint8_t)val * 0x0101010101010101ULL;
+    size_t qwords = len / 8;
+    size_t tail = len % 8;
 
-void *memcpy(void *restrict dest, const void *restrict src, size_t len) {
-    char *d = dest;
-    const char *s = src;
-    while (len--) {
-        *d++ = *s++;
-    }
-    return dest;
+    __asm__ volatile("rep stosq"
+        : "+D"(dest), "+c"(qwords)
+        : "a"(pattern)
+        : "memory");
+
+    __asm__ volatile("rep stosb"
+        : "+D"(dest), "+c"(tail)
+        : "a"(val)
+        : "memory");
+
+    return ret;
 }
 
 size_t strlen(const char* str) {

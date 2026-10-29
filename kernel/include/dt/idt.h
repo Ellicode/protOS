@@ -10,6 +10,7 @@
 #include <stdint.h>
 
 #define EXCEPTION_COUNT 32
+#define IRQ_COUNT       16
 
 enum {
     EXC_DIVISION_ERROR          = 0,

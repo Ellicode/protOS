@@ -74,6 +74,9 @@ void kboot() {
     heap_init();
     ksuccess("Heap init");
 
+    fbcon_init();
+    ksuccess("FBcon init");
+
     msr_check();
 
     vfs_init();
@@ -87,7 +90,14 @@ void kboot() {
 
     kinfo("Welcome to \e[36mProtOS\e[37m! Enjoy your stay :3");
 
+    int i = 0;
     while (1) {
-        __asm__("hlt");
+        // __asm__("hlt");
+        kassert("meow %d", i);
+        if (i == 10) {
+            i = 0;
+        } else {
+            i++;
+        }
     }
 }

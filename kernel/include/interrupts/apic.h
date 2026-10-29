@@ -19,6 +19,21 @@ typedef struct madt_entry_header_t {
     uint8_t length;
 } __attribute__ ((packed)) madt_entry_header_t;
 
+typedef struct madt_ioapic_entry_t {
+    madt_entry_header_t header;
+    uint8_t             id;
+    uint8_t             reserved;
+    uint32_t            address;
+    uint16_t            flags;
+} __attribute__ ((packed)) madt_ioapic_entry_t;
+typedef struct madt_iso_entry_t {
+    madt_entry_header_t header;
+    uint8_t     reserved;
+    uint8_t     irq;
+    uint32_t    gsi;
+    uint16_t    flags;
+} __attribute__((packed)) madt_iso_entry_t;
+
 enum {
     MADT_ENTRY_LAPIC                = 0,
     MADT_ENTRY_IOAPIC               = 1,
@@ -28,13 +43,6 @@ enum {
     MADT_ENTRY_LAPIC_OVERRIDE       = 5,
     MADT_ENTRY_x2APIC               = 9,
 };
-typedef struct madt_ioapic_entry {
-    madt_entry_header_t header;
-    uint8_t             id;
-    uint8_t             reserved;
-    uint32_t            address;
-    uint16_t            flags;
-} __attribute__ ((packed)) madt_ioapic_entry;
 
 #define PIC_COMMAND_MASTER  0x20
 #define PIC_DATA_MASTER     0x21

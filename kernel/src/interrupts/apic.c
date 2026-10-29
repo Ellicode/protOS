@@ -63,9 +63,10 @@ static void madt_parse(madt_header_t *madt) {
         
         switch (entry_hdr->type) {
             case MADT_ENTRY_IOAPIC:
-                ioapic_init((madt_ioapic_entry *)entry_hdr);
+                ioapic_init((madt_ioapic_entry_t *)entry_hdr);
                 break;
             case MADT_ENTRY_IOAPIC_OVERRIDE:
+                ioapic_parse_iso((madt_iso_entry_t *)entry_hdr);
                 break;
             default:
                 break;
@@ -98,8 +99,8 @@ void apic_init() {
         return;
     }
     madt_parse(madt);
+    ioapic_fill();
     lapic_init(madt);
 
     lapic_timer_init();
-    lvt_set_entry(LAPIC_REG_LVT_TIMER, 32);
 }

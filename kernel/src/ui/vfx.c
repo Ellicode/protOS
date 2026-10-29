@@ -10,43 +10,44 @@
 #include "ui/vfx.h"
 
 // Gets the color value compatible with the current framebuffer format
-uint32_t get_direct_color(uint32_t color) {
+uint32_t get_direct_color(framebuffer_t *fb, uint32_t color) {
     uint32_t direct_color = 0;
     direct_color =
             ((color >> 24U) >>
-            (8U - g_boot_info.framebuffer.red_mask_size)) <<
-            g_boot_info.framebuffer.red_mask_shift;
+            (8U - fb->red_mask_size)) <<
+            fb->red_mask_shift;
     direct_color |=
             ((color >> 16U & 0xFFU) >>
-            (8U - g_boot_info.framebuffer.green_mask_size)) <<
-            g_boot_info.framebuffer.green_mask_shift;
+            (8U - fb->green_mask_size)) <<
+            fb->green_mask_shift;
     direct_color |=
             ((color >> 8U & 0xFFU) >>
-            (8U - g_boot_info.framebuffer.blue_mask_size)) <<
-            g_boot_info.framebuffer.blue_mask_shift;
+            (8U - fb->blue_mask_size)) <<
+            fb->blue_mask_shift;
 
     return direct_color;
 }
 
 // Draws a singular pixel to the framebuffer.
 void put_pixel(
+    framebuffer_t *fb,
     uint32_t x, uint32_t y, 
     uint32_t color
 ) {
-    if (g_boot_info.framebuffer.address == NULL) { return; }
-    if (x >= g_boot_info.framebuffer.width || y >= g_boot_info.framebuffer.height) { return; }
+    if (fb->address == NULL) { return; }
+    if (x >= fb->width || y >= fb->height) { return; }
 
-    void *fb_ptr = g_boot_info.framebuffer.address + (y * g_boot_info.framebuffer.pitch) + (x * g_boot_info.framebuffer.bpp / 8);
+    void *fb_ptr = fb->address + (y * fb->pitch) + (x * fb->bpp / 8);
     
-    switch (g_boot_info.framebuffer.bpp) {
+    switch (fb->bpp) {
         case 32:
-            *(uint32_t *)fb_ptr = get_direct_color(color);
+            *(uint32_t *)fb_ptr = get_direct_color(fb, color);
             break;
         case 16:
-            *(uint16_t *)fb_ptr = get_direct_color(color);
+            *(uint16_t *)fb_ptr = get_direct_color(fb, color);
             break;
         case 8:
-            *(uint8_t *)fb_ptr = get_direct_color(color);
+            *(uint8_t *)fb_ptr = get_direct_color(fb, color);
             break;
         default:
             break;
@@ -54,12 +55,13 @@ void put_pixel(
 }
 
 void invert_rect(
+    framebuffer_t *fb,
     uint32_t x, uint32_t y,
     uint32_t w, uint32_t h
 ) {
-    uint8_t *fb_base = (uint8_t *)g_boot_info.framebuffer.address;
-    uint32_t pitch = g_boot_info.framebuffer.pitch;
-    uint32_t bytes_per_pixel = g_boot_info.framebuffer.bpp / 8;
+    uint8_t *fb_base = (uint8_t *)fb->address;
+    uint32_t pitch = fb->pitch;
+    uint32_t bytes_per_pixel = fb->bpp / 8;
 
     for (uint32_t row = y; row < y + h; row++) {
         

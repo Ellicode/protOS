@@ -15,3 +15,4 @@ void hide_cursor();
 void print_char(char c);
 void print(char *str);
 int kprintf(const char *restrict format, ...);
+void fbcon_init();
