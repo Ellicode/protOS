@@ -73,6 +73,7 @@ void idt_init() {
     }
 
     idt[32] = idt_generate_descriptor(isr_call_32, 0b10001110); // APIC timer
+    idt[33] = idt_generate_descriptor(isr_call_33, 0b10001110); // PIT calibration
 
     idtr.base = (uint64_t)idt;
     idtr.limit = sizeof(idt) - 1;

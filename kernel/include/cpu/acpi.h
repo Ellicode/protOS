@@ -48,5 +48,3 @@ typedef struct rsdt_header_t {
 } __attribute__ ((packed)) rsdt_header_t;
 
 #define CPUID_FLAG_ACPI (1ULL << 22U)
-
-void acpi_init();

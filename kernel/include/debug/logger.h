@@ -9,9 +9,14 @@
 #pragma once
 #include "ui/console.h"
 #include "cpu/sse.h"
+#include "interrupts/lapic.h"
 
 #define kassert(format, ...) do { \
-    kprintf("[%11d] " format "\n", 0, ##__VA_ARGS__); \
+    if (g_sse_enabled) { \
+        kprintf("[%11.2f] " format "\n", g_lapic_timer_ticks / 100.0f, ##__VA_ARGS__); \
+    } else { \
+        kprintf("[%11d] " format "\n", 0, ##__VA_ARGS__); \
+    } \
 } while (0)
 
 #define klog(format, color, name, ...) kassert("\e[%dm%4s\e[37m::%-16s " format, color, name, __func__, ##__VA_ARGS__)

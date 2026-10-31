@@ -8,14 +8,33 @@
 
 #include "dt/idt.h"
 #include "interrupts/isr.h"
+#include "interrupts/lapic.h"
+#include "drivers/pit.h"
 #include "debug/logger.h"
 #include "panic.h"
 
 void isr_handler(isr_frame_t *frame) {
-    // NOTE: Move to enum after there's more possible vectors
     uint64_t vec = frame->vector;
-    if (vec < EXCEPTION_COUNT) {
-        panic_handler(panic_messages[frame->vector], frame);
+    switch (vec) {
+        case IRQ_LAPIC_TIMER:
+            kdebug("tick!");
+            g_lapic_timer_ticks++;
+            break;
+
+        case IRQ_PIT_TIMER:
+            g_pit_ticks++;
+            break;
+
+        default:
+            if (vec < EXCEPTION_COUNT) {
+                panic_handler(panic_messages[vec], frame);
+            } else {
+                kdebug("Uncaught interrupt recieved (vec: %d)", frame->vector);
+            }
+            break;
     }
-    kdebug("Uncaught interrupt recieved (vec: %d)", frame->vector);
+
+    if (vec >= EXCEPTION_COUNT && vec <= EXCEPTION_COUNT + IRQ_COUNT) {
+        lapic_eoi();
+    }
 }

@@ -24,7 +24,7 @@ typedef struct madt_ioapic_entry_t {
     uint8_t             id;
     uint8_t             reserved;
     uint32_t            address;
-    uint16_t            flags;
+    uint32_t            gsi_base;
 } __attribute__ ((packed)) madt_ioapic_entry_t;
 typedef struct madt_iso_entry_t {
     madt_entry_header_t header;

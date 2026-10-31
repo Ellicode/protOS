@@ -11,6 +11,7 @@
 #include "interrupts/apic.h"
 
 extern void *g_lapic_base;
+extern uint64_t g_lapic_timer_ticks;
 
 // LAPIC registers (https://wiki.osdev.org/APIC)
 enum {
@@ -42,10 +43,12 @@ enum {
 };
 
 #define LVT_DISABLED        (1ULL << 16U)
+#define LAPIC_TIMER_HZ      100U
 
 #define LAPIC_READ_REG(reg) (*(volatile uint32_t *)((uint8_t *)g_lapic_base + (reg)))
 #define LAPIC_WRITE_REG(reg, val) (*(volatile uint32_t *)((uint8_t *)g_lapic_base + (reg)) = (val))
 
 void lvt_set_entry(int reg, uint8_t vector);
 void lapic_timer_init();
+void lapic_eoi();
 void lapic_init(const madt_header_t *madt);

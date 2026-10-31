@@ -77,27 +77,24 @@ void kboot() {
     fbcon_init();
     ksuccess("FBcon init");
 
+    apic_init();
+    ksuccess("APIC init");
+
     msr_check();
 
     vfs_init();
     ksuccess("VFS init");
-
-    acpi_init();
-    ksuccess("ACPI init");
-
-    apic_init();
-    ksuccess("APIC init");
 
     kinfo("Welcome to \e[36mProtOS\e[37m! Enjoy your stay :3");
 
     int i = 0;
     while (1) {
         // __asm__("hlt");
-        kassert("meow %d", i);
-        if (i == 10) {
-            i = 0;
-        } else {
-            i++;
-        }
+        // kassert("meow %d", i);
+        // if (i == 10) {
+        //     i = 0;
+        // } else {
+        //     i++;
+        // }
     }
 }

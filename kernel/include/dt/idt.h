@@ -29,6 +29,11 @@ enum {
     EXC_SIMD_FLOATING_POINT     = 19,
 };
 
+enum {
+    IRQ_LAPIC_TIMER             = 32,
+    IRQ_PIT_TIMER               = 33,
+};
+
 typedef struct idt_entry_t {
 	uint16_t    isr_low;
 	uint16_t    kernel_cs;
@@ -55,6 +60,7 @@ extern void isr_call_16();  // x87 floating point error
 extern void isr_call_19();  // SIMD floating point error
 
 extern void isr_call_32();  // APIC timer
+extern void isr_call_33();  // PIT calibration
 
 void idt_init();
 

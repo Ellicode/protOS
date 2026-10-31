@@ -2,6 +2,7 @@ add_executable(kernel
     src/bootloader/limine/preboot.c
 
     src/drivers/serial.c
+    src/drivers/pit.c
 
     src/ui/console.c
     src/ui/font.c
@@ -16,8 +17,7 @@ add_executable(kernel
     src/dt/idt.nasm
 
     src/cpu/sse.c
-    src/cpu/acpi.c
-
+    
     src/interrupts/isr.c
     src/interrupts/apic.c
     src/interrupts/lapic.c

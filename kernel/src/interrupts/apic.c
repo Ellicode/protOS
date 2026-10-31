@@ -10,9 +10,11 @@
 #include "cpu/acpi.h"
 #include "std/string.h"
 #include "utils/io.h"
+#include "dt/idt.h"
 #include "interrupts/apic.h"
 #include "interrupts/lapic.h"
 #include "interrupts/ioapic.h"
+#include "drivers/pit.h"
 #include "boot.h"
 #include "panic.h"
 
@@ -98,9 +100,11 @@ void apic_init() {
         kerror("MADT table not present");
         return;
     }
+    ioapic_init_overrides();
     madt_parse(madt);
-    ioapic_fill();
     lapic_init(madt);
+    ioapic_fill();
 
     lapic_timer_init();
+    enable_interrupts();
 }

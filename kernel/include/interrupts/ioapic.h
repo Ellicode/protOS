@@ -11,6 +11,11 @@
 
 extern void *g_ioapic_base;
 
+#define IOAPIC_REDIR_BASE       0x10U
+#define IOAPIC_REDIR_MASKED     (1U << 16U)
+#define IOAPIC_REDIR_POLARITY   (1U << 13U)
+#define IOAPIC_REDIR_TRIGGER    (1U << 15U)
+
 // IOAPIC registers
 enum {
     IOAPICID    = 0, // RW
@@ -28,4 +33,6 @@ typedef struct irq_override_t {
 
 void ioapic_parse_iso(const madt_iso_entry_t *entry);
 void ioapic_init(const madt_ioapic_entry_t *entry);
+void ioapic_init_overrides();
+int ioapic_set_irq_route(uint8_t irq, uint8_t vector, int masked);
 void ioapic_fill();
